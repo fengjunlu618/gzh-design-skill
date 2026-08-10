@@ -118,6 +118,13 @@ description: 微信公众号文章排版引擎，将 Markdown 转换为可直接
 | 标记层 | 正文关键词，每段 1–3 处 | 高频 | 下划线标记 |
 | 容器层 | 引用块、概念标签、长句强调 | 按需 | 浅底引用、荧光笔、徽章 |
 
+## 交付前必做（本机实测踩坑，2026-08）
+
+1. **加 UTF-8 BOM**：干净正文是纯 section 片段、无 `<meta charset>`，用户工具按系统编码（如 GBK）解析会满屏乱码。交付前给**两个产物文件**（片段 + 预览页）都加 BOM（`open(p,'wb').write(b'\xef\xbb\xbf'+data)`）；BOM 不影响微信粘贴（粘的是富文本不是文件字节），validate 脚本也不受影响。
+2. **视觉验收用预览页**：片段无 viewport meta（平台合规不能加），真机直接打开会按 980px 布局缩放成小字。正确入口是 `_预览.html`（有 viewport + 视口切换按钮 375/768/1280）；用 browser_console 检查 `document.documentElement.scrollWidth > window.innerWidth` 确认无横向溢出。交付时明确告知用户：看效果用 `_预览.html`，片段文件只用于粘贴。
+3. **目录卡点击跳转在预览外壳做**：公众号环境禁 JS，目录卡纯展示不可点属正常；预览外壳可加 gzhInitToc 动态绑定（章节名文本匹配正文标题 + 平滑滚动 + toast），绑定只存在于外壳，正文保持零 JS（校验脚本可确认）。
+4. 详细实测闭环见 `references/local-usage.md`。
+
 ## 平台红线（核心，完整检查交给校验脚本）
 
 - **禁止**：`<style>`/`<script>`/`<div>`、`class`/`id` 属性、`position:fixed/absolute/sticky`、`float`、`@media`/`@keyframes`、`display:grid`、CSS 变量、外部字体/CSS。

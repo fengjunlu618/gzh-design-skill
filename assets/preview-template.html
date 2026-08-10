@@ -104,12 +104,25 @@
         card.style.cursor='pointer';
         card.addEventListener('click',function(){
           var target=null;
-          // 全正文找最短包含匹配的元素（避免命中目录卡片自身）
-          var all=content.querySelectorAll('p,span,h3,h4');
+          // 通道1: 文本匹配正文区（排除目录卡自身），避免滚回目录
+          var all=content.querySelectorAll('p,h3,h4');
           for(var k=0;k<all.length;k++){
+            if(toc.contains(all[k])) continue;
             var t=(all[k].textContent||'').trim();
             if(t===name){target=all[k];break;}
-            if(!target && t.indexOf(name)>-1 && t.length<name.length+24){target=all[k];}
+            if(!target && t.indexOf(name)>-1 && t.length<name.length+30){target=all[k];}
+          }
+          // 通道2: PART 序号兜底（章节标题区 03/PART 结构唯一）——目录名与章节标题不一致时仍可跳
+          if(!target){
+            var pn=ps[0].textContent.replace(/PART\s*/i,'').trim(); // "PART 03" -> "03"
+            if(pn){
+              for(var m=0;m<all.length;m++){
+                if(toc.contains(all[m])) continue;
+                var tt=(all[m].textContent||'').trim();
+                var nxt=all[m].nextElementSibling;
+                if(tt===pn && nxt && (nxt.textContent||'').trim().toUpperCase()==='PART'){target=all[m];break;}
+              }
+            }
           }
           if(!target) return;
           var top=target.getBoundingClientRect().top+window.pageYOffset-70;
