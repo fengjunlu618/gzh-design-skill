@@ -83,6 +83,47 @@
       tag.textContent='视口 '+w+'px';
     }
   }
+  // 目录点击跳转：预览外壳增强（不写进正文，公众号粘贴仍合规）
+  function gzhInitToc(){
+    var content=document.getElementById('gzh-content');
+    if(!content) return;
+    // 找横向滚动目录区（overflow-x:scroll 且含多个 inline-block 卡片的 section）
+    var toc=null, scrolls=content.querySelectorAll('section[style*="overflow-x:scroll"]');
+    for(var i=0;i<scrolls.length;i++){
+      if(scrolls[i].querySelectorAll('section[style*="inline-block"]').length>1){toc=scrolls[i];break;}
+    }
+    if(!toc) return;
+    var cards=toc.querySelectorAll('section[style*="inline-block"]');
+    for(var j=0;j<cards.length;j++){
+      (function(card){
+        // 章节名 = 卡片里第2个 p（PART 编号下方的标题）
+        var ps=card.querySelectorAll('p');
+        if(ps.length<2) return;
+        var name=(ps[1].textContent||'').trim();
+        if(!name) return;
+        card.style.cursor='pointer';
+        card.addEventListener('click',function(){
+          var target=null;
+          // 全正文找最短包含匹配的元素（避免命中目录卡片自身）
+          var all=content.querySelectorAll('p,span,h3,h4');
+          for(var k=0;k<all.length;k++){
+            var t=(all[k].textContent||'').trim();
+            if(t===name){target=all[k];break;}
+            if(!target && t.indexOf(name)>-1 && t.length<name.length+24){target=all[k];}
+          }
+          if(!target) return;
+          var top=target.getBoundingClientRect().top+window.pageYOffset-70;
+          window.scrollTo({top:top,behavior:'smooth'});
+          gzhShowToast('📍 '+name);
+        });
+      })(cards[j]);
+    }
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',gzhInitToc);
+  }else{
+    gzhInitToc();
+  }
   // 初始化：真实窗口过窄时自动按窗口宽度
   if(window.innerWidth<520){gzhSetWidth(document.querySelector('.gzh-device[data-w="auto"]'));}
 </script>
