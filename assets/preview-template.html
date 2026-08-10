@@ -6,25 +6,37 @@
 <title>{{TITLE}} · 公众号排版预览</title>
 <style>
   body{margin:0;background:#eef0f2;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;-webkit-text-size-adjust:100%;}
-  .gzh-toolbar{position:fixed;top:0;left:0;right:0;height:54px;background:#ffffff;box-shadow:0 1px 10px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:99;}
+  .gzh-toolbar{position:fixed;top:0;left:0;right:0;height:54px;background:#ffffff;box-shadow:0 1px 10px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:99;gap:10px;}
   .gzh-hint{font-size:13px;color:#6b7280;line-height:1.4;}
   .gzh-hint b{color:#111827;}
+  .gzh-devices{display:flex;align-items:center;gap:4px;background:#f3f4f6;border-radius:9px;padding:3px;flex-shrink:0;}
+  .gzh-device{border:0;background:transparent;border-radius:7px;padding:5px 9px;font-size:12px;font-weight:600;color:#6b7280;cursor:pointer;transition:background .12s,color .12s;white-space:nowrap;}
+  .gzh-device:hover{color:#111827;}
+  .gzh-device.active{background:#059669;color:#fff;box-shadow:0 2px 6px rgba(5,150,105,.3);}
   .gzh-copy{background:#059669;color:#fff;border:0;border-radius:9px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 3px 10px rgba(5,150,105,.28);white-space:nowrap;transition:transform .08s,background .15s;}
   .gzh-copy:hover{background:#047857;}
   .gzh-copy:active{transform:translateY(1px);}
   .gzh-toast{position:fixed;top:66px;left:50%;transform:translateX(-50%);background:#111827;color:#fff;padding:11px 20px;border-radius:10px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s;z-index:100;box-shadow:0 6px 20px rgba(0,0,0,.25);max-width:88vw;text-align:center;}
   .gzh-toast.show{opacity:1;}
-  .gzh-stage{max-width:700px;margin:78px auto 64px;padding:0 8px;}
-  @media(max-width:520px){.gzh-hint{max-width:150px;}}
+  .gzh-stage{max-width:700px;margin:78px auto 64px;padding:0 8px;transition:max-width .25s ease;}
+  .gzh-width-tag{position:fixed;top:60px;right:14px;font-size:11px;color:#9ca3af;background:rgba(255,255,255,.85);padding:2px 8px;border-radius:8px;z-index:98;letter-spacing:.5px;}
+  @media(max-width:520px){.gzh-hint{display:none;}.gzh-device{padding:5px 7px;font-size:11px;}}
 </style>
 </head>
 <body>
 <div class="gzh-toolbar">
   <span class="gzh-hint">👇 下方是排版效果 · 点右侧 <b>复制</b> 直接粘到公众号</span>
+  <span class="gzh-devices" id="gzhDevices">
+    <button class="gzh-device active" data-w="auto" onclick="gzhSetWidth(this)">自适应</button>
+    <button class="gzh-device" data-w="375" onclick="gzhSetWidth(this)">📱 375</button>
+    <button class="gzh-device" data-w="768" onclick="gzhSetWidth(this)">💻 768</button>
+    <button class="gzh-device" data-w="1280" onclick="gzhSetWidth(this)">🖥 1280</button>
+  </span>
   <button class="gzh-copy" id="gzhCopyBtn" onclick="gzhCopy()">📋 复制到公众号</button>
 </div>
+<div class="gzh-width-tag" id="gzhWidthTag"></div>
 <div class="gzh-toast" id="gzhToast"></div>
-<div class="gzh-stage">
+<div class="gzh-stage" id="gzhStage">
   <div id="gzh-content">
 <!--GZH_CONTENT-->
   </div>
@@ -56,6 +68,23 @@
       gzhShowToast('⚠ 自动复制失败，请手动全选(Ctrl/⌘+A)再复制(Ctrl/⌘+C)');
     }
   }
+  function gzhSetWidth(btn){
+    var w=btn.getAttribute('data-w');
+    var stage=document.getElementById('gzhStage');
+    var tag=document.getElementById('gzhWidthTag');
+    var btns=document.querySelectorAll('.gzh-device');
+    for(var i=0;i<btns.length;i++){btns[i].classList.remove('active');}
+    btn.classList.add('active');
+    if(w==='auto'){
+      stage.style.maxWidth='700px';
+      tag.textContent='';
+    }else{
+      stage.style.maxWidth=w+'px';
+      tag.textContent='视口 '+w+'px';
+    }
+  }
+  // 初始化：真实窗口过窄时自动按窗口宽度
+  if(window.innerWidth<520){gzhSetWidth(document.querySelector('.gzh-device[data-w="auto"]'));}
 </script>
 </body>
 </html>

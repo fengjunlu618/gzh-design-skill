@@ -92,7 +92,7 @@ description: 微信公众号文章排版引擎，将 Markdown 转换为可直接
    ```bash
    <SKILL_ROOT>/scripts/wrap_preview.py <上面的干净正文.html>
    ```
-   产出 `{...}_预览.html`——浏览器打开后右上角有「复制到公众号」按钮，点一下即把渲染后的富文本复制到剪贴板（等价 Ctrl+A/Ctrl+C），再到公众号编辑器 Ctrl/⌘+V 粘贴。按钮和脚本只在预览外壳里、**不在被复制的 section 内**，所以粘到公众号的仍是干净合规正文。
+   产出 `{...}_预览.html`——浏览器打开后右上角有「复制到公众号」按钮，点一下即把渲染后的富文本复制到剪贴板（等价 Ctrl+A/Ctrl+C），再到公众号编辑器 Ctrl/⌘+V 粘贴。工具栏另有**视口切换**（自适应 / 📱375 / 💻768 / 🖥1280），点按可验收各设备宽度下的响应式表现（容器 max-width 自适应、无横向溢出）。按钮和脚本只在预览外壳里、**不在被复制的 section 内**，所以粘到公众号的仍是干净合规正文。
 3. 告知用户：**打开 `{...}_预览.html` → 点右上角「复制」→ 公众号编辑器粘贴**；并给出干净正文文件路径作为兜底。附校验脚本结论（已通过 / 剩余 warning）。
 
 ## 生成时的智能处理（这些是本 skill 的特色，必须做）
@@ -167,3 +167,5 @@ description: 微信公众号文章排版引擎，将 Markdown 转换为可直接
 添加后在 `references/theme-index.md` 登记一行（主题名 / 主色 / 适用场景 / 组件库文件 / 正文下划线 CSS），并跑 `python3 scripts/component_lint.py .` 确认组件库无反模式（0 ERROR）。
 
 > 触发与主题选择的回归用例见 `references/eval-cases.md`（维护时用于回归核对，不影响单次生成）。
+
+> 本机实测经验（校验→修标点→预览→视觉验收闭环，含 DOM 检查兜底）：`references/local-usage.md`；半角标点批量修复脚本：`scripts/fix_halfwidth_punct.py`（validate 的标点 WARNING 是最高频返工点，用脚本批量修后重跑 validate 到 0）。
