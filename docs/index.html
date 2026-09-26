@@ -1692,11 +1692,13 @@
 
 </script>
 <script>
-  var THEMES=[[["摸鱼绿（默认）", "#059669", "moyu-green"], ["红白色系", "#DC2626", "red-white"], ["石墨极简风", "#52525B", "graphite-minimal"], ["留白禅意风", "#4A5D52", "zen-whitespace"], ["摸鱼票据风", "#059669", "moyu-ticket"], ["橄榄手记", "#1e1f23", "olive-journal"]]];
+  var THEMES=[["摸鱼绿（默认）", "#059669", "moyu-green"], ["红白色系", "#DC2626", "red-white"], ["石墨极简风", "#52525B", "graphite-minimal"], ["留白禅意风", "#4A5D52", "zen-whitespace"], ["摸鱼票据风", "#059669", "moyu-ticket"], ["橄榄手记", "#1e1f23", "olive-journal"]];
   var tabs=document.getElementById('tabs'), panes=document.getElementById('panes');
   THEMES.forEach(function(t,i){
     var name=t[0],color=t[1],slug=t[2];
-    var src=document.getElementById('th-'+slug).textContent;
+    var thEl=document.getElementById('th-'+slug);
+    if(!thEl){ console.error('missing theme block: '+slug); return; }
+    var src=thEl.textContent;
     var tab=document.createElement('div');
     tab.className='tab'+(i===0?' active':'');
     tab.innerHTML='<span class="dot" style="background:'+color+'"></span>'+name;
