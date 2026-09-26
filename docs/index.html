@@ -1,0 +1,1718 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>gzh-design · 6 套主题排版预览（单文件版）</title>
+<style>
+  body{margin:0;background:#f4f4f5;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;color:#1f2937}
+  header{padding:28px 20px 6px;max-width:1500px;margin:0 auto}
+  h1{font-size:22px;margin:0 0 8px}
+  .sub{color:#6b7280;font-size:13px;line-height:1.7;margin:0 0 12px}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;padding:8px 20px 4px;max-width:1500px;margin:0 auto}
+  .tab{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid #e5e7eb;border-radius:20px;padding:7px 14px;font-size:13px;cursor:pointer;user-select:none;transition:all .15s}
+  .tab:hover{border-color:#059669}
+  .tab.active{background:#059669;color:#fff;border-color:#059669;font-weight:600}
+  .tab .dot{width:10px;height:10px;border-radius:50%;border:1px solid rgba(0,0,0,.08)}
+  .tab.active .dot{border-color:rgba(255,255,255,.5)}
+  .panes{padding:12px 20px 36px;max-width:1500px;margin:0 auto}
+  .pane{display:none;background:#fff;border-radius:14px;box-shadow:0 4px 16px -6px rgba(0,0,0,.12);overflow:hidden}
+  .pane.active{display:block}
+  iframe{width:100%;height:720px;border:0;background:#fff}
+  footer{max-width:1500px;margin:0 auto;padding:0 20px 40px;color:#9ca3af;font-size:12px}
+</style>
+</head>
+<body>
+<header>
+  <h1>gzh-design · 6 套主题排版预览</h1>
+  <p class="sub">同一篇文章《做了些爆款 Skills 以后，我对 Skills 的看法》用 6 套精选主题各排一遍。点击上方主题切换查看，框内可滚动阅读全文。此页为单文件自包含版，无任何外部依赖。</p>
+</header>
+<div class="tabs" id="tabs"></div>
+<div class="panes" id="panes"></div>
+<footer>甲木 × 摸鱼小李 联名共建 · 主题清单见 references/theme-index.md</footer>
+<script type="text/plain" id="th-moyu-green">
+<section style="max-width:677px;margin:0 auto;background:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#374151;line-height:1.75;letter-spacing:0.5px;overflow-x:hidden;">
+
+  <!-- 1. 封面 cover-breaking（无右侧图片版） -->
+  <section style="margin:0 0 32px;background:#fff;border:1.5px solid rgba(5,150,105,0.15);border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.06);width:100%;">
+    <section style="padding:32px 28px 28px;">
+      <section style="display:flex;align-items:center;gap:8px;margin-bottom:28px;">
+        <span style="width:6px;height:6px;background:#059669;border-radius:50%;"><span leaf=""><br></span></span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:3px;color:#059669;"><span leaf="">SKILLS · 深度观点</span></span>
+        <section style="flex:1;height:1px;overflow:hidden;background:linear-gradient(to right,rgba(5,150,105,0.12),transparent);"><span leaf=""><br></span></section>
+        <span style="font-size:10px;color:#D1D5DB;font-weight:600;"><span leaf="">2026.07</span></span>
+      </section>
+      <section>
+        <p style="font-size:15px;color:#D1D5DB;margin:0 0 6px;text-decoration:line-through;letter-spacing:0.5px;">
+          <span leaf="">都以为 Agent 会抹平能力差距</span>
+        </p>
+        <p style="font-size:24px;font-weight:900;color:#111827;margin:0;line-height:1.05;letter-spacing:-2px;">
+          <span leaf="">不，它在</span>
+          <span style="color:#059669;"><span leaf="">放大</span></span>
+        </p>
+        <p style="font-size:24px;font-weight:900;color:#059669;margin:0 0 16px;line-height:1.05;letter-spacing:-2px;">
+          <span leaf="">能力差距</span>
+        </p>
+        <section style="width:48px;height:3px;background:linear-gradient(to right,#059669,#34D399);border-radius:2px;margin-bottom:12px;">
+          <span leaf=""><br></span>
+        </section>
+        <p style="font-size:13px;color:#9CA3AF;margin:0;line-height:1.7;letter-spacing:0.5px;">
+          <span leaf="">能力商品 · 经验外化 · 好架构 · 复利飞轮</span>
+        </p>
+      </section>
+    </section>
+    <section style="background:linear-gradient(135deg,#059669,#10B981);padding:12px 28px;display:flex;align-items:center;justify-content:space-between;">
+      <p style="font-size:12px;color:rgba(255,255,255,0.9);margin:0;font-weight:600;letter-spacing:0.5px;">
+        <span leaf="">甲木的 AI 观察</span>
+      </p>
+      <section style="display:flex;gap:4px;">
+        <span style="background:rgba(255,255,255,0.2);padding:1px 6px;border-radius:3px;font-size:8px;color:#fff;font-weight:600;"><span leaf="">SKILLS</span></span>
+        <span style="background:rgba(255,255,255,0.2);padding:1px 6px;border-radius:3px;font-size:8px;color:#fff;font-weight:600;"><span leaf="">AGENT</span></span>
+      </section>
+    </section>
+  </section>
+
+  <!-- 2. 目录 toc-scroll（紧跟封面之下） -->
+  <section style="margin:0 20px 32px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+      <p style="font-size:10px;color:#9CA3AF;margin:0;text-transform:uppercase;letter-spacing:2px;font-weight:600;">
+        <span leaf="">📦 4 Parts + Conclusion</span>
+      </p>
+      <p style="font-size:10px;color:#9CA3AF;margin:0;">
+        <span leaf="">👉 滑动</span>
+      </p>
+    </section>
+    <section style="overflow-x:scroll;-webkit-overflow-scrolling:touch;white-space:nowrap;padding-bottom:8px;">
+      <section style="display:inline-block;white-space:normal;vertical-align:top;width:110px;background:linear-gradient(135deg,#059669,#10B981);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:rgba(255,255,255,0.7);letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 01</span></p>
+        <p style="font-size:13px;font-weight:800;color:#fff;margin:0 0 3px;"><span leaf="">能力商品</span></p>
+        <p style="font-size:10px;color:rgba(255,255,255,0.7);margin:0;"><span leaf="">Skill 的定义</span></p>
+      </section>
+      <section style="display:inline-block;white-space:normal;vertical-align:top;width:110px;background:#fff;border:1px solid #E5E7EB;border-radius:12px;padding:12px;margin-right:8px;box-shadow:0 2px 6px rgba(0,0,0,0.04);">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 02</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">经验外化</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf="">同时懂三件事</span></p>
+      </section>
+      <section style="display:inline-block;white-space:normal;vertical-align:top;width:110px;background:#fff;border:1px solid #E5E7EB;border-radius:12px;padding:12px;margin-right:8px;box-shadow:0 2px 6px rgba(0,0,0,0.04);">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 03</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">好架构</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf="">中心短，辐射厚</span></p>
+      </section>
+      <section style="display:inline-block;white-space:normal;vertical-align:top;width:110px;background:#fff;border:1px solid #E5E7EB;border-radius:12px;padding:12px;margin-right:8px;box-shadow:0 2px 6px rgba(0,0,0,0.04);">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 04</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">像代码维护</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf="">gotchas 最值钱</span></p>
+      </section>
+      <section style="display:inline-block;white-space:normal;vertical-align:top;width:110px;background:#fff;border:1px solid #E5E7EB;border-radius:12px;padding:12px;box-shadow:0 2px 6px rgba(0,0,0,0.04);">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART ///</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">复利飞轮</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf="">写在最后</span></p>
+      </section>
+    </section>
+  </section>
+
+  <!-- 3. 开头引言 oneliner-card（带前缀引导语版） -->
+  <section style="margin:0 20px;">
+    <section style="background:#FFF;border:1px dashed #BBF7D0;border-radius:8px;padding:14px 16px;margin-bottom:24px;text-align:center;">
+      <p style="font-size:12px;color:#9CA3AF;margin:0 0 6px;line-height:1.5;">
+        <span leaf="">一句话说透 Skill</span>
+      </p>
+      <p style="margin:0;line-height:1.6;">
+        <span style="font-size:15px;color:#059669;font-weight:bold;border-bottom:3px solid #FDE68A;padding-bottom:2px;"><span leaf="">把人的经验、工作流和品味，变成可以分发、调用、迭代的能力商品。</span></span>
+      </p>
+    </section>
+  </section>
+
+  <!-- 4. 前言正文 -->
+  <section style="padding:0 20px;">
+    <p style="margin-bottom:16px;font-size:14px;line-height:1.9;text-align:justify;">
+      <span leaf="">我最近几次聊 Skills，有一个越来越明确的判断：大家都在说 Agent，但</span><span style="border-bottom:2px solid #A7F3D0;font-weight:600;"><span leaf="">大多数人还没真正理解它</span></span><span leaf="">。Agent 不是简单抹平能力差距，</span><strong style="color:#059669;"><span leaf="">而是在放大能力差距</span></strong><span leaf="">。</span>
+    </p>
+    <p style="margin-bottom:24px;font-size:14px;line-height:1.9;text-align:justify;">
+      <span leaf="">目标清晰、品味强的人会被 Agent 放大；目标混乱、没有判断的人，也会被放大混乱。而 </span><span style="border-bottom:2px solid #A7F3D0;font-weight:600;"><span leaf="">Skill，正是弥合这道鸿沟的关键</span></span><span leaf="">。</span>
+    </p>
+  </section>
+
+  <!-- 5. 第一章 能力商品 -->
+  <section style="margin-top:16px;margin-bottom:32px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">01</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">Skill 是能力商品</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">CAPABILITY AS PRODUCT · 能力商品</span></p>
+      </section>
+    </section>
+    <p style="margin-bottom:16px;font-size:14px;line-height:1.9;text-align:justify;">
+      <span leaf="">我现在对 Skill 的一句话定义是：把专家经验、工作流、品味和工具调用，</span><span style="border-bottom:2px solid #A7F3D0;font-weight:600;"><span leaf="">封装成可分发、可复用、可迭代的能力单元</span></span><span leaf="">。</span>
+    </p>
+    <p style="margin-bottom:16px;font-size:14px;line-height:1.9;text-align:justify;">
+      <span leaf="">它不是单纯的提示词，也不是传统意义上的 App，更像 Agent 时代的</span><strong style="color:#059669;"><span leaf="">能力商品</span></strong><span leaf="">。用户不需要理解底层的 </span><span style="background:#F3F4F6;color:#1F2937;padding:2px 6px;border-radius:4px;font-size:13px;font-weight:600;"><span leaf="">MCP</span></span><span leaf="">、</span><span style="background:#F3F4F6;color:#1F2937;padding:2px 6px;border-radius:4px;font-size:13px;font-weight:600;"><span leaf="">CLI</span></span><span leaf="">、</span><span style="background:#F3F4F6;color:#1F2937;padding:2px 6px;border-radius:4px;font-size:13px;font-weight:600;"><span leaf="">loop</span></span><span leaf="">，只需要知道：它解决什么问题，产出什么结果。</span>
+    </p>
+  </section>
+
+  <!-- 6. 第二章 经验外化 -->
+  <section style="margin-top:48px;margin-bottom:32px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">02</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">核心是把人的经验外化</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">EXTERNALIZE EXPERIENCE · 经验外化</span></p>
+      </section>
+    </section>
+    <p style="margin-bottom:16px;font-size:14px;line-height:1.9;text-align:justify;">
+      <span leaf="">真正有价值的部分，是把人的审美、判断和经验</span><strong style="color:#059669;"><span leaf="">固化进去</span></strong><span leaf="">。这要求创作者同时懂三件事：</span>
+    </p>
+    <!-- pill-list 带说明版 × 3 -->
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">传统专业知识</span></span>
+      </p>
+      <p style="font-size:13px;color:#4B5563;margin:0;line-height:1.7;text-align:justify;"><span leaf="">决定你知道什么结果算好。</span></p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">AI 的上下限</span></span>
+      </p>
+      <p style="font-size:13px;color:#4B5563;margin:0;line-height:1.7;text-align:justify;"><span leaf="">决定你知道什么必须工程化兜底。</span></p>
+    </section>
+    <section style="margin-bottom:24px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">产品化思维</span></span>
+      </p>
+      <p style="font-size:13px;color:#4B5563;margin:0;line-height:1.7;text-align:justify;"><span leaf="">决定你知道用户场景和稳定性要求。</span></p>
+    </section>
+    <!-- ### 子标题 → subtitle-highlight -->
+    <p style="font-size:15px;font-weight:900;color:#111827;margin-top:32px;margin-bottom:16px;">
+      <span style="background:linear-gradient(180deg,transparent 65%,#FDE68A 65%);padding:0 4px;"><span leaf="">一个设计类 Skill 的例子</span></span>
+    </p>
+    <p style="margin-bottom:16px;font-size:14px;line-height:1.9;text-align:justify;">
+      <span leaf="">它没有让图像模型一把梭生成 Logo，而是先生成 </span><span style="background:linear-gradient(120deg,#FDE68A 0%,rgba(255,255,255,0) 100%);padding:0 4px;border-radius:2px;font-weight:600;color:#111827;"><span leaf="">SVG 变体</span></span><span leaf="">，再做展示图。把 Logo 本体、展示场景、交互背景拆成不同层，分别用最适合的技术处理。</span>
+    </p>
+  </section>
+
+  <!-- 7. 第三章 好架构 -->
+  <section style="margin-top:48px;margin-bottom:32px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">03</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">好架构：中心短，辐射厚</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">THIN HARNESS FAT SKILLS · 好架构</span></p>
+      </section>
+    </section>
+    <!-- 章内 > 引用 → quote-box -->
+    <section style="background:#F9FAFB;border:1px dashed #D1D5DB;border-radius:8px;padding:12px 16px;margin-bottom:24px;text-align:justify;">
+      <p style="font-size:13px;color:#374151;margin:0;line-height:1.6;">
+        <span leaf="">复杂 Skill 不怕有复杂内容，怕的是把复杂内容一次性塞给模型。</span><strong style="color:#059669;"><span leaf="">文件系统本身就是一种上下文工程。</span></strong>
+      </p>
+    </section>
+    <p style="margin-bottom:16px;font-size:14px;line-height:1.9;text-align:justify;">
+      <span leaf="">SKILL.md 只放高信号流程；references 放重文档，按需读取；scripts 放确定性逻辑。更稳的架构是 </span><strong style="color:#059669;"><span leaf="">Thin Harness, Fat Skills</span></strong><span leaf="">。</span>
+    </p>
+  </section>
+
+  <!-- 8. 第四章 像代码维护 -->
+  <section style="margin-top:48px;margin-bottom:32px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">04</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">像代码质量一样维护</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">MAINTAIN LIKE CODE · 像代码维护</span></p>
+      </section>
+    </section>
+    <p style="margin-bottom:16px;font-size:14px;line-height:1.9;text-align:justify;">
+      <span leaf="">好 Skill 不是一次写完，它需要像代码质量一样维护。一个可靠的生命周期是：</span>
+    </p>
+    <!-- ordered-list 生命周期三步 -->
+    <section style="margin-bottom:24px;">
+      <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#059669;color:#fff;font-size:11px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">1</span></span>
+        <p style="font-size:14px;color:#374151;margin:0;line-height:1.9;flex:1;"><span leaf="">先用真实任务找到它会错在哪里。</span></p>
+      </section>
+      <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#059669;color:#fff;font-size:11px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">2</span></span>
+        <p style="font-size:14px;color:#374151;margin:0;line-height:1.9;flex:1;"><span leaf="">把失败案例追加到 </span><span style="background:#F3F4F6;color:#1F2937;padding:2px 6px;border-radius:4px;font-size:13px;font-weight:600;"><span leaf="">gotchas</span></span><span leaf="">，而不是不断加长主流程。</span></p>
+      </section>
+      <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#059669;color:#fff;font-size:11px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">3</span></span>
+        <p style="font-size:14px;color:#374151;margin:0;line-height:1.9;flex:1;"><span leaf="">再做跨模型测试，看不同模型的差异。</span></p>
+      </section>
+    </section>
+    <!-- 金句 → oneliner-card 带下方补充说明版 -->
+    <section style="background:#FFF;border:1px dashed #BBF7D0;border-radius:8px;padding:14px 16px;margin-bottom:24px;text-align:center;">
+      <p style="margin:0 0 6px;line-height:1.6;">
+        <span style="font-size:15px;color:#059669;font-weight:bold;border-bottom:3px solid #FDE68A;padding-bottom:2px;"><span leaf="">gotchas 是整个 Skill 里最高价值的内容</span></span>
+      </p>
+      <p style="font-size:13px;color:#9CA3AF;margin:0;line-height:1.5;">
+        <span leaf="">正向原则模型往往已经知道，负面边界才是专家经验。</span>
+      </p>
+    </section>
+  </section>
+
+  <!-- 9. 结语章 复利飞轮（编号 ///，PART → LAST） -->
+  <section style="margin-top:48px;margin-bottom:32px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">///</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">LAST</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">个人产品的复利飞轮</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">COMPOUNDING FLYWHEEL · 复利飞轮</span></p>
+      </section>
+    </section>
+    <p style="margin-bottom:16px;font-size:14px;line-height:1.9;text-align:justify;">
+      <span leaf="">过去文章和产品是分开的：先做产品，再写推广。现在 </span><span style="border-bottom:2px solid #A7F3D0;font-weight:600;"><span leaf="">Skill、文章、案例、开源仓库会互相喂养</span></span><span leaf="">。</span>
+    </p>
+    <p style="margin-bottom:20px;font-size:14px;line-height:1.9;text-align:justify;">
+      <span leaf="">每一次真实任务，都不只是在完成任务，而是在积累下一次能调用的能力资产。这就是个人产品在 Agent 时代的</span><strong style="color:#059669;"><span leaf="">复利飞轮</span></strong><span leaf="">。</span>
+    </p>
+    <!-- center-divider 金句 -->
+    <p style="font-size:14px;margin-bottom:20px;text-align:center;color:#059669;font-weight:700;letter-spacing:1px;border-top:1px solid #F3F4F6;border-bottom:1px solid #F3F4F6;padding:12px 0;">
+      <span leaf="">每一次真实任务，都是在积累下一次能调用的能力资产。</span>
+    </p>
+  </section>
+
+  <!-- 10. 签名段落 + 互动三连 footer-cta -->
+  <section style="padding:0 20px;">
+    <p style="margin-bottom:24px;font-size:14px;line-height:1.9;text-align:justify;">
+      <span leaf="">我是甲木，热衷于分享一些 AI 观察、AI 干货内容。如果你觉得今天这篇有收获，欢迎点赞、在看、转发三连，我们下篇见。</span>
+    </p>
+    <section style="background:radial-gradient(circle at center,#F9FAFB 0%,#FFFFFF 100%);border:1px solid #E5E7EB;border-radius:16px;padding:32px 20px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.03);margin:0 0 24px;">
+      <p style="font-size:13px;font-weight:bold;color:#111827;margin-bottom:20px;line-height:1.6;">
+        <span leaf="">既然看到这里了，如果觉得有用，随手点个赞、在看、转发三连吧。</span>
+      </p>
+      <section style="display:flex;justify-content:center;gap:24px;margin-bottom:16px;">
+        <section style="text-align:center;cursor:pointer;color:#4B5563;">
+          <section style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;background:#fff;border-radius:12px;box-shadow:0 2px 4px rgba(0,0,0,0.05);border:1px solid #F3F4F6;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+          </section>
+          <span style="font-size:10px;font-weight:600;"><span leaf="">点赞</span></span>
+        </section>
+        <section style="text-align:center;cursor:pointer;color:#4B5563;">
+          <section style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;background:#fff;border-radius:12px;box-shadow:0 2px 4px rgba(0,0,0,0.05);border:1px solid #F3F4F6;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"></circle><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path></svg>
+          </section>
+          <span style="font-size:10px;font-weight:600;"><span leaf="">在看</span></span>
+        </section>
+        <section style="text-align:center;cursor:pointer;color:#059669;">
+          <section style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;background:#ECFDF5;border-radius:12px;box-shadow:0 2px 4px rgba(5,150,105,0.15);border:1px solid #A7F3D0;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18v-4a8 8 0 0 1 8-8h8"></path><polyline points="16 2 20 6 16 10"></polyline></svg>
+          </section>
+          <span style="font-size:10px;font-weight:600;"><span leaf="">转发</span></span>
+        </section>
+      </section>
+      <p style="font-size:10px;color:#9CA3AF;letter-spacing:1px;margin:0;">
+        <span leaf="">THANKS FOR READING</span>
+      </p>
+    </section>
+  </section>
+
+</section>
+
+</script>
+<script type="text/plain" id="th-red-white">
+<section style="max-width:677px;margin:0 auto;background:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#374151;line-height:1.75;letter-spacing:0.5px;overflow-x:hidden;">
+
+  <!-- 1. 开头引言卡片 -->
+  <section style="margin:10px 10px 32px;background:#ffffff;border-radius:12px;box-shadow:0 4px 24px -4px rgba(220,38,38,0.15);padding:28px 24px 22px;overflow:hidden;">
+    <p style="font-size:42px;color:#DC2626;font-weight:900;margin:0;line-height:0.6;">
+      <span leaf="">"</span>
+    </p>
+    <p style="font-size:16px;font-weight:800;color:#1C1917;margin:12px 0 8px;line-height:1.75;padding-left:4px;">
+      <span leaf="">Agent 不是抹平能力差距，而是在</span>
+      <span style="background:#DC2626;color:#FFFFFF;padding:2px 8px;border-radius:4px;"><span leaf="">放大</span></span>
+      <span leaf="">它。而 Skill，正是把经验变成</span>
+      <span style="background:#DC2626;color:#FFFFFF;padding:2px 8px;border-radius:4px;"><span leaf="">能力商品</span></span>
+      <span leaf="">的关键。</span>
+    </p>
+    <p style="text-align:right;font-size:12px;color:#9CA3AF;margin:8px 0 0;letter-spacing:1px;">
+      <span leaf="">—— 甲木</span>
+    </p>
+  </section>
+
+  <!-- 2. 前言正文 -->
+  <section style="padding:0 10px 20px;">
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:justify;">
+      <span leaf="">我最近几次聊 Skills，有一个越来越明确的判断：大家都在说 Agent，但</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">大多数人还没真正理解它</span></span><span leaf="">。Agent 不是简单抹平能力差距，</span><strong style="color:#DC2626;"><span leaf="">而是在放大能力差距</span></strong><span leaf="">。</span>
+    </p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:justify;">
+      <span leaf="">目标清晰、品味强的人会被 Agent 放大；目标混乱、没有判断的人，也会被放大混乱。而 </span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">Skill，正是弥合这道鸿沟的关键</span></span><span leaf="">。</span>
+    </p>
+  </section>
+
+  <!-- 3. 前言导读 -->
+  <section style="padding:0 10px 32px;">
+    <p style="font-size:14px;color:#9CA3AF;margin:0 0 14px;letter-spacing:1px;">
+      <span leaf="">📌 本文看点</span>
+    </p>
+    <section style="display:flex;justify-content:space-between;">
+      <section style="flex:1;background:#FEF2F2;border-radius:10px;padding:16px 12px;margin-right:8px;text-align:center;border:1px solid #FEE2E2;">
+        <p style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:12px;font-weight:800;padding:2px 10px;border-radius:4px;margin:0 0 8px;"><span leaf="">01</span></p>
+        <p style="font-size:13px;font-weight:700;color:#1C1917;margin:0;"><span leaf="">Skill 是能力商品</span></p>
+      </section>
+      <section style="flex:1;background:#FEF2F2;border-radius:10px;padding:16px 12px;margin-right:8px;text-align:center;border:1px solid #FEE2E2;">
+        <p style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:12px;font-weight:800;padding:2px 10px;border-radius:4px;margin:0 0 8px;"><span leaf="">02</span></p>
+        <p style="font-size:13px;font-weight:700;color:#1C1917;margin:0;"><span leaf="">经验如何外化</span></p>
+      </section>
+      <section style="flex:1;background:#FEF2F2;border-radius:10px;padding:16px 12px;text-align:center;border:1px solid #FEE2E2;">
+        <p style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:12px;font-weight:800;padding:2px 10px;border-radius:4px;margin:0 0 8px;"><span leaf="">03</span></p>
+        <p style="font-size:13px;font-weight:700;color:#1C1917;margin:0;"><span leaf="">复利飞轮</span></p>
+      </section>
+    </section>
+  </section>
+
+  <!-- 4. 第一章 -->
+  <section style="margin-top:16px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">01</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">CAPABILITY AS PRODUCT</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">Skill 是能力商品</span></h3>
+        </section>
+      </section>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:justify;">
+      <span leaf="">我现在对 Skill 的一句话定义是：把专家经验、工作流、品味和工具调用，</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">封装成可分发、可复用、可迭代的能力单元</span></span><span leaf="">。</span>
+    </p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:justify;">
+      <span leaf="">它不是单纯的提示词，也不是传统意义上的 App，更像 Agent 时代的</span><span style="background:#FEE2E2;color:#991B1B;padding:2px 6px;border-radius:3px;font-weight:700;"><span leaf="">能力商品</span></span><span leaf="">。用户不需要理解底层的 </span><span style="background:#F3F4F6;color:#1F2937;padding:2px 6px;border-radius:4px;font-size:14px;font-weight:600;"><span leaf="">MCP</span></span><span leaf="">、</span><span style="background:#F3F4F6;color:#1F2937;padding:2px 6px;border-radius:4px;font-size:14px;font-weight:600;"><span leaf="">CLI</span></span><span leaf="">、</span><span style="background:#F3F4F6;color:#1F2937;padding:2px 6px;border-radius:4px;font-size:14px;font-weight:600;"><span leaf="">loop</span></span><span leaf="">，只需要知道：它解决什么问题，产出什么结果。</span>
+    </p>
+  </section>
+
+  <!-- 章节分割线 -->
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FCA5A5,#DC2626,#FCA5A5,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+
+  <!-- 5. 第二章 -->
+  <section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">02</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">EXTERNALIZE</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">核心是把人的经验外化</span></h3>
+        </section>
+      </section>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:justify;">
+      <span leaf="">真正有价值的部分，是把人的审美、判断和经验</span><strong style="color:#DC2626;"><span leaf="">固化进去</span></strong><span leaf="">。这要求创作者同时懂三件事：</span>
+    </p>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:14px;font-weight:700;color:#991B1B;background:#FEE2E2;padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#DC2626;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">传统专业知识</span></span>
+      </p>
+      <p style="font-size:14px;color:#4B5563;margin:0;line-height:1.7;text-align:justify;"><span leaf="">决定你知道什么结果算好。</span></p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:14px;font-weight:700;color:#991B1B;background:#FEE2E2;padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#DC2626;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">AI 的上下限</span></span>
+      </p>
+      <p style="font-size:14px;color:#4B5563;margin:0;line-height:1.7;text-align:justify;"><span leaf="">决定你知道什么必须工程化兜底。</span></p>
+    </section>
+    <section style="margin-bottom:24px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:14px;font-weight:700;color:#991B1B;background:#FEE2E2;padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#DC2626;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">产品化思维</span></span>
+      </p>
+      <p style="font-size:14px;color:#4B5563;margin:0;line-height:1.7;text-align:justify;"><span leaf="">决定你知道用户场景和稳定性要求。</span></p>
+    </section>
+    <!-- ### 子标题 -->
+    <p style="font-size:15px;font-weight:800;color:#1C1917;margin:28px 0 14px;padding-left:10px;border-left:3px solid #DC2626;line-height:1.4;">
+      <span leaf="">一个设计类 Skill 的例子</span>
+    </p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:justify;">
+      <span leaf="">它没有让图像模型一把梭生成 Logo，而是先生成 </span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">SVG 变体</span></span><span leaf="">，再做展示图。把 Logo 本体、展示场景、交互背景拆成不同层，分别用最适合的技术处理。</span>
+    </p>
+  </section>
+
+  <!-- 章节分割线 -->
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FCA5A5,#DC2626,#FCA5A5,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+
+  <!-- 6. 第三章 -->
+  <section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">03</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">ARCHITECTURE</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">好架构：中心短，辐射厚</span></h3>
+        </section>
+      </section>
+    </section>
+    <!-- > 引用 → 金句引用 8a -->
+    <section style="background:#FEF2F2;border-radius:0 10px 10px 0;border-left:4px solid #DC2626;padding:18px 22px;margin-bottom:24px;">
+      <p style="font-size:16px;font-weight:800;color:#991B1B;margin:0;line-height:1.8;">
+        <span leaf="">「复杂 Skill 不怕有复杂内容，怕的是把复杂内容一次性塞给模型。文件系统本身就是一种上下文工程。」</span>
+      </p>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:justify;">
+      <span leaf="">SKILL.md 只放高信号流程；references 放重文档，按需读取；scripts 放确定性逻辑。更稳的架构是 </span><strong style="color:#DC2626;"><span leaf="">Thin Harness, Fat Skills</span></strong><span leaf="">。</span>
+    </p>
+  </section>
+
+  <!-- 章节分割线 -->
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FCA5A5,#DC2626,#FCA5A5,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+
+  <!-- 7. 第四章 -->
+  <section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">04</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">MAINTAIN LIKE CODE</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">像代码质量一样维护</span></h3>
+        </section>
+      </section>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:justify;">
+      <span leaf="">好 Skill 不是一次写完，它需要像代码质量一样维护。一个可靠的生命周期是：</span>
+    </p>
+    <section style="margin-bottom:24px;">
+      <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#DC2626;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">1</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">先用真实任务找到它会错在哪里。</span></p>
+      </section>
+      <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#DC2626;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">2</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">把失败案例追加到 </span><span style="background:#F3F4F6;color:#1F2937;padding:2px 6px;border-radius:4px;font-size:14px;font-weight:600;"><span leaf="">gotchas</span></span><span leaf="">，而不是不断加长主流程。</span></p>
+      </section>
+      <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#DC2626;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">3</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">再做跨模型测试，看不同模型的差异。</span></p>
+      </section>
+    </section>
+    <p style="font-size:15px;margin:0 0 24px;text-align:center;color:#DC2626;font-weight:700;letter-spacing:1px;border-top:1px solid #FEE2E2;border-bottom:1px solid #FEE2E2;padding:14px 10px;">
+      <span leaf="">gotchas 是整个 Skill 里最高价值的内容——负面边界才是专家经验。</span>
+    </p>
+  </section>
+
+  <!-- 章节分割线 -->
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FCA5A5,#DC2626,#FCA5A5,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+
+  <!-- 8. 结语章 ∞ -->
+  <section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">∞</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">THE END</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">个人产品的复利飞轮</span></h3>
+        </section>
+      </section>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:justify;">
+      <span leaf="">过去文章和产品是分开的：先做产品，再写推广。现在 </span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">Skill、文章、案例、开源仓库会互相喂养</span></span><span leaf="">。</span>
+    </p>
+    <p style="margin-bottom:24px;font-size:15px;line-height:1.8;text-align:justify;">
+      <span leaf="">每一次真实任务，都不只是在完成任务，而是在积累下一次能调用的能力资产。这就是个人产品在 Agent 时代的</span><strong style="color:#DC2626;"><span leaf="">复利飞轮</span></strong><span leaf="">。</span>
+    </p>
+    <section style="background:#FEF2F2;border-radius:0 10px 10px 0;border-left:4px solid #DC2626;padding:18px 22px;margin-bottom:24px;">
+      <p style="font-size:16px;font-weight:800;color:#991B1B;margin:0;line-height:1.8;">
+        <span leaf="">「每一次真实任务，都是在积累下一次能调用的能力资产。」</span>
+      </p>
+    </section>
+  </section>
+
+  <!-- 9. END 分割线 -->
+  <section style="padding:0 10px;">
+    <section style="text-align:center;margin:0 0 32px;">
+      <section style="display:flex;align-items:center;justify-content:center;">
+        <span style="height:2px;width:60px;background:linear-gradient(to right,transparent,#DC2626);margin-right:12px;"><span leaf=""><br></span></span>
+        <span style="font-size:11px;color:#DC2626;letter-spacing:3px;font-weight:700;"><span leaf="">END</span></span>
+        <span style="height:2px;width:60px;background:linear-gradient(to left,transparent,#DC2626);margin-left:12px;"><span leaf=""><br></span></span>
+      </section>
+    </section>
+  </section>
+
+  <!-- 10. 尾部签名 -->
+  <section style="padding:0 10px;">
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:justify;">
+      <span leaf="">我是甲木，热衷于分享一些 AI 观察、AI 干货内容。</span>
+    </p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:justify;">
+      <span leaf="">如果你觉得今天这篇有收获，欢迎</span>
+      <strong style="color:#DC2626;"><span leaf="">点赞、在看、转发</span></strong>
+      <span leaf="">三连，我们下篇见。</span>
+    </p>
+  </section>
+
+</section>
+
+</script>
+<script type="text/plain" id="th-graphite-minimal">
+<section style="max-width:677px;margin:0 auto;background:#FFFFFF;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#52525B;line-height:1.8;letter-spacing:0.3px;overflow-x:hidden;">
+
+  <!-- 1. 开头引言卡片 -->
+  <section style="margin:10px 10px 40px;padding:32px 24px 24px;border-top:1px solid #E4E4E7;border-bottom:1px solid #E4E4E7;background:#FFFFFF;">
+    <p style="font-size:11px;color:#A1A1AA;letter-spacing:2px;margin:0 0 18px;font-weight:400;">
+      <span leaf="">QUOTE</span>
+    </p>
+    <p style="font-size:18px;font-weight:700;color:#27272A;margin:0 0 8px;line-height:1.7;letter-spacing:0.5px;">
+      <span leaf="">Agent 不是抹平能力差距，而是在</span>
+      <span style="border-bottom:2px solid #52525B;"><span leaf="">放大</span></span>
+      <span leaf="">它。而 Skill，是把经验变成</span>
+      <span style="border-bottom:2px solid #52525B;"><span leaf="">能力商品</span></span>
+      <span leaf="">的那道桥。</span>
+    </p>
+    <p style="text-align:right;font-size:12px;color:#A1A1AA;margin:16px 0 0;letter-spacing:1px;">
+      <span leaf="">—— 甲木</span>
+    </p>
+  </section>
+
+  <!-- 2. 前言正文 -->
+  <section style="padding:0 10px 24px;">
+    <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;">
+      <span leaf="">我最近几次聊 Skills，有一个越来越明确的判断：大家都在说 Agent，但</span><span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">大多数人还没真正理解它</span></span><span leaf="">。Agent 不是简单抹平能力差距，</span><strong style="color:#27272A;"><span leaf="">而是在放大能力差距</span></strong><span leaf="">。</span>
+    </p>
+    <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;">
+      <span leaf="">目标清晰、品味强的人会被 Agent 放大；目标混乱、没有判断的人，也会被放大混乱。而 </span><span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">Skill，正是弥合这道鸿沟的关键</span></span><span leaf="">。</span>
+    </p>
+  </section>
+
+  <!-- 3. 前言导读 -->
+  <section style="padding:0 10px 40px;">
+    <p style="font-size:11px;color:#A1A1AA;margin:0 0 16px;letter-spacing:2px;">
+      <span leaf="">本文看点</span>
+    </p>
+    <section style="display:flex;justify-content:space-between;">
+      <section style="flex:1;background:#FAFAFA;border-top:1px solid #E4E4E7;padding:18px 12px 16px;margin-right:8px;">
+        <p style="font-size:11px;color:#A1A1AA;font-weight:500;margin:0 0 8px;letter-spacing:1px;"><span leaf="">01</span></p>
+        <p style="font-size:13px;font-weight:700;color:#27272A;margin:0;line-height:1.5;"><span leaf="">Skill 是能力商品</span></p>
+      </section>
+      <section style="flex:1;background:#FAFAFA;border-top:1px solid #E4E4E7;padding:18px 12px 16px;margin-right:8px;">
+        <p style="font-size:11px;color:#A1A1AA;font-weight:500;margin:0 0 8px;letter-spacing:1px;"><span leaf="">02</span></p>
+        <p style="font-size:13px;font-weight:700;color:#27272A;margin:0;line-height:1.5;"><span leaf="">经验如何外化</span></p>
+      </section>
+      <section style="flex:1;background:#FAFAFA;border-top:1px solid #E4E4E7;padding:18px 12px 16px;">
+        <p style="font-size:11px;color:#A1A1AA;font-weight:500;margin:0 0 8px;letter-spacing:1px;"><span leaf="">03</span></p>
+        <p style="font-size:13px;font-weight:700;color:#27272A;margin:0;line-height:1.5;"><span leaf="">复利飞轮</span></p>
+      </section>
+    </section>
+  </section>
+
+  <!-- 4. 第一章 -->
+  <section style="margin-top:16px;margin-bottom:32px;padding:0 10px;">
+    <section style="position:relative;padding-bottom:20px;border-bottom:1px solid #E4E4E7;">
+      <p style="font-size:48px;font-weight:900;color:#E4E4E7;margin:0;line-height:1;letter-spacing:-2px;">
+        <span leaf="">01</span>
+      </p>
+      <section style="margin-top:-8px;">
+        <p style="font-size:10px;color:#A1A1AA;font-weight:500;letter-spacing:3px;margin:0 0 6px;text-transform:uppercase;">
+          <span leaf="">CAPABILITY AS PRODUCT</span>
+        </p>
+        <h3 style="font-size:20px;font-weight:800;color:#27272A;margin:0;letter-spacing:0.5px;line-height:1.4;">
+          <span leaf="">Skill 是能力商品</span>
+        </h3>
+      </section>
+    </section>
+    <p style="margin-bottom:22px;margin-top:24px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;">
+      <span leaf="">我现在对 Skill 的一句话定义是：把专家经验、工作流、品味和工具调用，</span><span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">封装成可分发、可复用、可迭代的能力单元</span></span><span leaf="">。</span>
+    </p>
+    <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;">
+      <span leaf="">它不是单纯的提示词，也不是传统意义上的 App，更像 Agent 时代的</span><span style="background:#F4F4F5;color:#27272A;padding:2px 7px;border-radius:3px;font-weight:700;font-size:14px;"><span leaf="">能力商品</span></span><span leaf="">。用户不需要理解底层的 </span><span style="background:#F4F4F5;color:#27272A;padding:2px 6px;border-radius:4px;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:14px;"><span leaf="">MCP</span></span><span leaf="">、</span><span style="background:#F4F4F5;color:#27272A;padding:2px 6px;border-radius:4px;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:14px;"><span leaf="">CLI</span></span><span leaf="">、</span><span style="background:#F4F4F5;color:#27272A;padding:2px 6px;border-radius:4px;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:14px;"><span leaf="">loop</span></span><span leaf="">，只需要知道：它解决什么问题，产出什么结果。</span>
+    </p>
+  </section>
+
+  <!-- 章节分割线 -->
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:#E4E4E7;margin:0;"><span leaf=""><br></span></section>
+  </section>
+
+  <!-- 5. 第二章 -->
+  <section style="margin-top:56px;margin-bottom:32px;padding:0 10px;">
+    <section style="position:relative;padding-bottom:20px;border-bottom:1px solid #E4E4E7;">
+      <p style="font-size:48px;font-weight:900;color:#E4E4E7;margin:0;line-height:1;letter-spacing:-2px;">
+        <span leaf="">02</span>
+      </p>
+      <section style="margin-top:-8px;">
+        <p style="font-size:10px;color:#A1A1AA;font-weight:500;letter-spacing:3px;margin:0 0 6px;text-transform:uppercase;">
+          <span leaf="">EXTERNALIZE</span>
+        </p>
+        <h3 style="font-size:20px;font-weight:800;color:#27272A;margin:0;letter-spacing:0.5px;line-height:1.4;">
+          <span leaf="">核心是把人的经验外化</span>
+        </h3>
+      </section>
+    </section>
+    <p style="margin-bottom:22px;margin-top:24px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;">
+      <span leaf="">真正有价值的部分，是把人的审美、判断和经验</span><span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">固化进去</span></span><span leaf="">。这要求创作者同时懂三件事：</span>
+    </p>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:14px;font-weight:700;color:#27272A;background:#F4F4F5;padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#52525B;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">传统专业知识</span></span>
+      </p>
+      <p style="font-size:14px;color:#71717A;margin:0;line-height:1.7;text-align:justify;"><span leaf="">决定你知道什么结果算好。</span></p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:14px;font-weight:700;color:#27272A;background:#F4F4F5;padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#52525B;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">AI 的上下限</span></span>
+      </p>
+      <p style="font-size:14px;color:#71717A;margin:0;line-height:1.7;text-align:justify;"><span leaf="">决定你知道什么必须工程化兜底。</span></p>
+    </section>
+    <section style="margin-bottom:24px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:14px;font-weight:700;color:#27272A;background:#F4F4F5;padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#52525B;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">产品化思维</span></span>
+      </p>
+      <p style="font-size:14px;color:#71717A;margin:0;line-height:1.7;text-align:justify;"><span leaf="">决定你知道用户场景和稳定性要求。</span></p>
+    </section>
+    <!-- ### 子标题 -->
+    <p style="font-size:15px;font-weight:800;color:#27272A;margin:28px 0 14px;padding-left:12px;border-left:3px solid #52525B;line-height:1.4;">
+      <span leaf="">一个设计类 Skill 的例子</span>
+    </p>
+    <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;">
+      <span leaf="">它没有让图像模型一把梭生成 Logo，而是先生成 </span><span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">SVG 变体</span></span><span leaf="">，再做展示图。把 Logo 本体、展示场景、交互背景拆成不同层，分别用最适合的技术处理。</span>
+    </p>
+  </section>
+
+  <!-- 章节分割线 -->
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:#E4E4E7;margin:0;"><span leaf=""><br></span></section>
+  </section>
+
+  <!-- 6. 第三章 -->
+  <section style="margin-top:56px;margin-bottom:32px;padding:0 10px;">
+    <section style="position:relative;padding-bottom:20px;border-bottom:1px solid #E4E4E7;">
+      <p style="font-size:48px;font-weight:900;color:#E4E4E7;margin:0;line-height:1;letter-spacing:-2px;">
+        <span leaf="">03</span>
+      </p>
+      <section style="margin-top:-8px;">
+        <p style="font-size:10px;color:#A1A1AA;font-weight:500;letter-spacing:3px;margin:0 0 6px;text-transform:uppercase;">
+          <span leaf="">ARCHITECTURE</span>
+        </p>
+        <h3 style="font-size:20px;font-weight:800;color:#27272A;margin:0;letter-spacing:0.5px;line-height:1.4;">
+          <span leaf="">好架构：中心短，辐射厚</span>
+        </h3>
+      </section>
+    </section>
+    <!-- > 引用 → 石墨竖条金句 8a -->
+    <section style="border-left:3px solid #52525B;padding:16px 0 16px 24px;margin:24px 0 28px;">
+      <p style="font-size:16px;font-weight:700;color:#27272A;margin:0;line-height:1.7;letter-spacing:0.5px;">
+        <span leaf="">「复杂 Skill 不怕有复杂内容，怕的是把复杂内容一次性塞给模型。文件系统本身就是一种上下文工程。」</span>
+      </p>
+    </section>
+    <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;">
+      <span leaf="">SKILL.md 只放高信号流程；references 放重文档，按需读取；scripts 放确定性逻辑。更稳的架构是 </span><strong style="color:#27272A;"><span leaf="">Thin Harness, Fat Skills</span></strong><span leaf="">。</span>
+    </p>
+  </section>
+
+  <!-- 章节分割线 -->
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:#E4E4E7;margin:0;"><span leaf=""><br></span></section>
+  </section>
+
+  <!-- 7. 第四章 -->
+  <section style="margin-top:56px;margin-bottom:32px;padding:0 10px;">
+    <section style="position:relative;padding-bottom:20px;border-bottom:1px solid #E4E4E7;">
+      <p style="font-size:48px;font-weight:900;color:#E4E4E7;margin:0;line-height:1;letter-spacing:-2px;">
+        <span leaf="">04</span>
+      </p>
+      <section style="margin-top:-8px;">
+        <p style="font-size:10px;color:#A1A1AA;font-weight:500;letter-spacing:3px;margin:0 0 6px;text-transform:uppercase;">
+          <span leaf="">MAINTAIN LIKE CODE</span>
+        </p>
+        <h3 style="font-size:20px;font-weight:800;color:#27272A;margin:0;letter-spacing:0.5px;line-height:1.4;">
+          <span leaf="">像代码质量一样维护</span>
+        </h3>
+      </section>
+    </section>
+    <p style="margin-bottom:22px;margin-top:24px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;">
+      <span leaf="">好 Skill 不是一次写完，它需要像代码质量一样维护。一个</span><span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">可靠的生命周期</span></span><span leaf="">是：</span>
+    </p>
+    <section style="margin-bottom:24px;">
+      <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#27272A;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">1</span></span>
+        <p style="font-size:15px;color:#52525B;margin:0;line-height:1.8;flex:1;"><span leaf="">先用真实任务找到它会错在哪里。</span></p>
+      </section>
+      <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#27272A;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">2</span></span>
+        <p style="font-size:15px;color:#52525B;margin:0;line-height:1.8;flex:1;"><span leaf="">把失败案例追加到 </span><span style="background:#F4F4F5;color:#27272A;padding:2px 6px;border-radius:4px;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:14px;"><span leaf="">gotchas</span></span><span leaf="">，而不是不断加长主流程。</span></p>
+      </section>
+      <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#27272A;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">3</span></span>
+        <p style="font-size:15px;color:#52525B;margin:0;line-height:1.8;flex:1;"><span leaf="">再做跨模型测试，看不同模型的差异。</span></p>
+      </section>
+    </section>
+    <p style="font-size:15px;margin:0 0 24px;text-align:center;color:#27272A;font-weight:700;letter-spacing:1px;border-top:1px solid #E4E4E7;border-bottom:1px solid #E4E4E7;padding:14px 10px;">
+      <span leaf="">正向原则模型往往已经知道，负面边界才是专家经验。</span>
+    </p>
+  </section>
+
+  <!-- 章节分割线 -->
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:#E4E4E7;margin:0;"><span leaf=""><br></span></section>
+  </section>
+
+  <!-- 8. 结语章 ∞ -->
+  <section style="margin-top:56px;margin-bottom:32px;padding:0 10px;">
+    <section style="position:relative;padding-bottom:20px;border-bottom:1px solid #E4E4E7;">
+      <p style="font-size:48px;font-weight:900;color:#E4E4E7;margin:0;line-height:1;letter-spacing:-2px;">
+        <span leaf="">∞</span>
+      </p>
+      <section style="margin-top:-8px;">
+        <p style="font-size:10px;color:#A1A1AA;font-weight:500;letter-spacing:3px;margin:0 0 6px;text-transform:uppercase;">
+          <span leaf="">THE END</span>
+        </p>
+        <h3 style="font-size:20px;font-weight:800;color:#27272A;margin:0;letter-spacing:0.5px;line-height:1.4;">
+          <span leaf="">个人产品的复利飞轮</span>
+        </h3>
+      </section>
+    </section>
+    <p style="margin-bottom:22px;margin-top:24px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;">
+      <span leaf="">过去文章和产品是分开的：先做产品，再写推广。现在 </span><span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">Skill、文章、案例、开源仓库会互相喂养</span></span><span leaf="">。</span>
+    </p>
+    <p style="margin-bottom:24px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;">
+      <span leaf="">每一次真实任务，都不只是在完成任务，而是在积累下一次能调用的能力资产。这就是个人产品在 Agent 时代的</span><strong style="color:#27272A;"><span leaf="">复利飞轮</span></strong><span leaf="">。</span>
+    </p>
+    <section style="border-left:3px solid #52525B;padding:16px 0 16px 24px;margin:0 0 28px;">
+      <p style="font-size:16px;font-weight:700;color:#27272A;margin:0;line-height:1.7;letter-spacing:0.5px;">
+        <span leaf="">「每一次真实任务，都是在积累下一次能调用的能力资产。」</span>
+      </p>
+    </section>
+  </section>
+
+  <!-- 9. END 分割线 -->
+  <section style="padding:0 10px;">
+    <section style="text-align:center;margin:0 0 36px;">
+      <section style="display:flex;align-items:center;justify-content:center;">
+        <span style="height:1px;width:48px;background:#E4E4E7;margin-right:16px;"><span leaf=""><br></span></span>
+        <span style="font-size:10px;color:#A1A1AA;letter-spacing:4px;font-weight:500;"><span leaf="">END</span></span>
+        <span style="height:1px;width:48px;background:#E4E4E7;margin-left:16px;"><span leaf=""><br></span></span>
+      </section>
+    </section>
+  </section>
+
+  <!-- 10. 尾部签名 -->
+  <section style="padding:0 10px 24px;">
+    <section style="border-top:1px solid #E4E4E7;padding-top:28px;">
+      <p style="margin-bottom:16px;font-size:15px;line-height:1.8;color:#52525B;text-align:justify;">
+        <span leaf="">我是甲木，热衷于分享一些 AI 观察、AI 干货内容。</span>
+      </p>
+      <p style="margin-bottom:0;font-size:15px;line-height:1.8;color:#52525B;text-align:justify;">
+        <span leaf="">如果你觉得今天这篇有收获，欢迎</span>
+        <strong style="color:#27272A;"><span leaf="">点赞、在看、转发</span></strong>
+        <span leaf="">三连，我们下篇见。</span>
+      </p>
+    </section>
+  </section>
+
+</section>
+</content>
+
+</script>
+<script type="text/plain" id="th-zen-whitespace">
+<section style="max-width: 677px;margin: 0 auto;background: #FFFFFF;font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;color: #525252;line-height: 1.9;letter-spacing: 0.3px;overflow-x: hidden;">
+
+  <section style="margin: 32px 16px 48px;padding: 40px 24px;border-top: 1px solid #E8E8E8;border-bottom: 1px solid #E8E8E8;text-align: center;">
+    <p style="font-family: 'Noto Serif SC', Georgia, 'Times New Roman', serif;font-size: 19px;font-weight: 600;color: #2B2B2B;margin: 0 0 28px;line-height: 1.85;letter-spacing: 0.8px;">
+      <span leaf="">Agent 不是在抹平能力差距，而是在放大它。</span><span leaf="">而 Skill，是那件把经验、工作流与品味装进去的能力商品。</span>
+    </p>
+    <p style="font-size: 12px;color: #A3A3A3;margin: 0;letter-spacing: 1.5px;">
+      <span leaf="">—— 甲木</span>
+    </p>
+  </section>
+
+  <section style="padding: 0 0 20px;">
+    <p style="margin-bottom: 26px;font-size: 15px;line-height: 1.9;text-align: justify;color: #525252;padding: 0 16px;">
+      <span leaf="">我最近几次聊 Skills，有一个越来越明确的判断：大家都在说 Agent，但</span>
+      <span style="border-bottom: 1.5px solid #B5C8BC;font-weight: 500;"><span leaf="">大多数人还没真正理解它</span></span>
+      <span leaf="">。Agent 不是简单抹平能力差距，</span>
+      <strong style="color: #4A5D52;"><span leaf="">而是在放大能力差距</span></strong>
+      <span leaf="">。</span>
+    </p>
+    <p style="margin-bottom: 26px;font-size: 15px;line-height: 1.9;text-align: justify;color: #525252;padding: 0 16px;">
+      <span leaf="">目标清晰、品味强的人会被 Agent 放大；</span>
+      <span style="border-bottom: 1.5px solid #B5C8BC;font-weight: 500;"><span leaf="">目标混乱、没有判断的人，也会被放大混乱</span></span>
+      <span leaf="">。而 Skill，正是弥合这道鸿沟的关键。</span>
+    </p>
+  </section>
+
+  <section style="padding: 0 16px 48px;">
+    <p style="font-size: 11px;color: #A3A3A3;margin: 0 0 20px;letter-spacing: 2px;text-transform: uppercase;">
+      <span leaf="">本文脉络</span>
+    </p>
+    <section style="border-top: 1px solid #E8E8E8;">
+      <section style="display: flex;">
+        <section style="flex: 1;padding: 18px 12px 18px 0;border-bottom: 1px solid #E8E8E8;border-right: 1px solid #E8E8E8;margin-right: 16px;">
+          <p style="font-size: 11px;color: #4A5D52;font-weight: 600;margin: 0 0 6px;letter-spacing: 1px;"><span leaf="">01</span></p>
+          <p style="font-size: 13px;color: #2B2B2B;margin: 0;font-weight: 500;line-height: 1.5;"><span leaf="">Skill 是能力商品</span></p>
+        </section>
+        <section style="flex: 1;padding: 18px 12px 18px 0;border-bottom: 1px solid #E8E8E8;border-right: 1px solid #E8E8E8;margin-right: 16px;">
+          <p style="font-size: 11px;color: #4A5D52;font-weight: 600;margin: 0 0 6px;letter-spacing: 1px;"><span leaf="">02</span></p>
+          <p style="font-size: 13px;color: #2B2B2B;margin: 0;font-weight: 500;line-height: 1.5;"><span leaf="">把人的经验外化</span></p>
+        </section>
+        <section style="flex: 1;padding: 18px 0 18px 0;border-bottom: 1px solid #E8E8E8;">
+          <p style="font-size: 11px;color: #4A5D52;font-weight: 600;margin: 0 0 6px;letter-spacing: 1px;"><span leaf="">03</span></p>
+          <p style="font-size: 13px;color: #2B2B2B;margin: 0;font-weight: 500;line-height: 1.5;"><span leaf="">好架构与复利飞轮</span></p>
+        </section>
+      </section>
+    </section>
+  </section>
+
+  <section style="padding: 0 16px;">
+    <section style="height: 1px;background: #E8E8E8;margin: 64px 0 0;">
+      <span leaf=""><br></span>
+    </section>
+  </section>
+
+  <section style="margin-top: 64px;margin-bottom: 32px;padding: 0 16px;">
+    <p style="font-size: 10px;color: #4A5D52;font-weight: 600;letter-spacing: 4px;margin: 0 0 10px;text-transform: uppercase;">
+      <span leaf="">01 · CHAPTER ONE</span>
+    </p>
+    <h3 style="font-family: 'Noto Serif SC', Georgia, 'Times New Roman', serif;font-size: 22px;font-weight: 700;color: #2B2B2B;margin: 0 0 16px;letter-spacing: 0.5px;line-height: 1.4;">
+      <span leaf="">Skill 是能力商品</span>
+    </h3>
+    <section style="width: 40px;height: 2px;background: #4A5D52;">
+      <span leaf=""><br></span>
+    </section>
+
+    <p style="margin-bottom: 26px;font-size: 15px;line-height: 1.9;text-align: justify;color: #525252;padding: 16px 0 0;">
+      <span leaf="">我现在对 Skill 的一句话定义是：把专家经验、工作流、品味和工具调用，封装成</span>
+      <span style="border-bottom: 1.5px solid #B5C8BC;font-weight: 500;"><span leaf="">可分发、可复用、可迭代的能力单元</span></span>
+      <span leaf="">。</span>
+    </p>
+    <p style="margin-bottom: 26px;font-size: 15px;line-height: 1.9;text-align: justify;color: #525252;">
+      <span leaf="">它不是单纯的提示词，也不是传统意义上的 App，更像 Agent 时代的</span>
+      <span style="background: #EEF3F0;color: #3D5046;padding: 2px 6px;border-radius: 2px;font-weight: 600;font-size: 14px;"><span leaf="">能力商品</span></span>
+      <span leaf="">。用户不需要理解底层的 MCP、CLI、loop，只需要知道：</span>
+      <span style="border-bottom: 1.5px solid #B5C8BC;font-weight: 500;"><span leaf="">它解决什么问题，产出什么结果</span></span>
+      <span leaf="">。</span>
+    </p>
+  </section>
+
+  <section style="padding: 0 16px;">
+    <section style="height: 1px;background: #E8E8E8;margin: 64px 0 0;">
+      <span leaf=""><br></span>
+    </section>
+  </section>
+
+  <section style="margin-top: 64px;margin-bottom: 32px;padding: 0 16px;">
+    <p style="font-size: 10px;color: #4A5D52;font-weight: 600;letter-spacing: 4px;margin: 0 0 10px;text-transform: uppercase;">
+      <span leaf="">02 · CHAPTER TWO</span>
+    </p>
+    <h3 style="font-family: 'Noto Serif SC', Georgia, 'Times New Roman', serif;font-size: 22px;font-weight: 700;color: #2B2B2B;margin: 0 0 16px;letter-spacing: 0.5px;line-height: 1.4;">
+      <span leaf="">核心是把人的经验外化</span>
+    </h3>
+    <section style="width: 40px;height: 2px;background: #4A5D52;">
+      <span leaf=""><br></span>
+    </section>
+
+    <p style="margin-bottom: 26px;font-size: 15px;line-height: 1.9;text-align: justify;color: #525252;padding: 16px 0 0;">
+      <span leaf="">真正有价值的部分，是</span>
+      <span style="border-bottom: 1.5px solid #B5C8BC;font-weight: 500;"><span leaf="">把人的审美、判断和经验固化进去</span></span>
+      <span leaf="">。这要求创作者同时懂三件事：</span>
+    </p>
+
+    <section style="margin: 0 0 32px;border-top: 1px solid #E8E8E8;">
+      <section style="display: flex;align-items: baseline;padding: 16px 0;border-bottom: 1px solid #E8E8E8;">
+        <p style="font-size: 11px;color: #4A5D52;font-weight: 600;letter-spacing: 1px;margin: 0;min-width: 28px;"><span leaf="">01</span></p>
+        <p style="font-size: 14px;color: #2B2B2B;margin: 0;line-height: 1.7;padding-left: 12px;"><span leaf="">传统专业知识：决定你知道什么结果算好</span></p>
+      </section>
+      <section style="display: flex;align-items: baseline;padding: 16px 0;border-bottom: 1px solid #E8E8E8;">
+        <p style="font-size: 11px;color: #4A5D52;font-weight: 600;letter-spacing: 1px;margin: 0;min-width: 28px;"><span leaf="">02</span></p>
+        <p style="font-size: 14px;color: #2B2B2B;margin: 0;line-height: 1.7;padding-left: 12px;"><span leaf="">AI 的上下限：决定你知道什么必须工程化兜底</span></p>
+      </section>
+      <section style="display: flex;align-items: baseline;padding: 16px 0;border-bottom: 1px solid #E8E8E8;">
+        <p style="font-size: 11px;color: #4A5D52;font-weight: 600;letter-spacing: 1px;margin: 0;min-width: 28px;"><span leaf="">03</span></p>
+        <p style="font-size: 14px;color: #2B2B2B;margin: 0;line-height: 1.7;padding-left: 12px;"><span leaf="">产品化思维：决定你知道用户场景和稳定性要求</span></p>
+      </section>
+    </section>
+
+    <p style="margin: 28px 0 14px;font-size: 16px;font-weight: 700;color: #2B2B2B;line-height: 1.5;border-left: 3px solid #4A5D52;padding-left: 12px;">
+      <span leaf="">一个设计类 Skill 的例子</span>
+    </p>
+
+    <p style="margin-bottom: 26px;font-size: 15px;line-height: 1.9;text-align: justify;color: #525252;">
+      <span leaf="">它没有让图像模型一把梭生成 Logo，而是先生成 </span>
+      <span style="background: #EEF3F0;color: #3D5046;padding: 2px 6px;border-radius: 2px;font-weight: 600;font-size: 14px;"><span leaf="">SVG 变体</span></span>
+      <span leaf="">，再做展示图。把 Logo 本体、展示场景、交互背景拆成不同层，</span>
+      <span style="border-bottom: 1.5px solid #B5C8BC;font-weight: 500;"><span leaf="">分别用最适合的技术处理</span></span>
+      <span leaf="">。</span>
+    </p>
+  </section>
+
+  <section style="padding: 0 16px;">
+    <section style="height: 1px;background: #E8E8E8;margin: 64px 0 0;">
+      <span leaf=""><br></span>
+    </section>
+  </section>
+
+  <section style="margin-top: 64px;margin-bottom: 32px;padding: 0 16px;">
+    <p style="font-size: 10px;color: #4A5D52;font-weight: 600;letter-spacing: 4px;margin: 0 0 10px;text-transform: uppercase;">
+      <span leaf="">03 · CHAPTER THREE</span>
+    </p>
+    <h3 style="font-family: 'Noto Serif SC', Georgia, 'Times New Roman', serif;font-size: 22px;font-weight: 700;color: #2B2B2B;margin: 0 0 16px;letter-spacing: 0.5px;line-height: 1.4;">
+      <span leaf="">好架构：中心短，辐射厚</span>
+    </h3>
+    <section style="width: 40px;height: 2px;background: #4A5D52;">
+      <span leaf=""><br></span>
+    </section>
+  </section>
+
+  <section style="margin: 40px 16px;padding: 36px 20px;border-top: 1px solid #E8E8E8;border-bottom: 1px solid #E8E8E8;text-align: center;">
+    <p style="font-family: 'Noto Serif SC', Georgia, 'Times New Roman', serif;font-size: 17px;font-weight: 600;color: #2B2B2B;margin: 0;line-height: 1.9;letter-spacing: 0.8px;">
+      <span leaf="">「复杂 Skill 不怕有复杂内容，怕的是把复杂内容一次性塞给模型。文件系统本身就是一种上下文工程。」</span>
+    </p>
+  </section>
+
+  <section style="padding: 0 16px;">
+    <p style="margin-bottom: 26px;font-size: 15px;line-height: 1.9;text-align: justify;color: #525252;">
+      <span leaf="">SKILL.md 只放</span>
+      <span style="border-bottom: 1.5px solid #B5C8BC;font-weight: 500;"><span leaf="">高信号流程</span></span>
+      <span leaf="">；references 放重文档，按需读取；scripts 放确定性逻辑。更稳的架构是 </span>
+      <strong style="color: #4A5D52;"><span leaf="">Thin Harness, Fat Skills</span></strong>
+      <span leaf="">。</span>
+    </p>
+  </section>
+
+  <section style="padding: 0 16px;">
+    <section style="height: 1px;background: #E8E8E8;margin: 64px 0 0;">
+      <span leaf=""><br></span>
+    </section>
+  </section>
+
+  <section style="margin-top: 64px;margin-bottom: 32px;padding: 0 16px;">
+    <p style="font-size: 10px;color: #4A5D52;font-weight: 600;letter-spacing: 4px;margin: 0 0 10px;text-transform: uppercase;">
+      <span leaf="">04 · CHAPTER FOUR</span>
+    </p>
+    <h3 style="font-family: 'Noto Serif SC', Georgia, 'Times New Roman', serif;font-size: 22px;font-weight: 700;color: #2B2B2B;margin: 0 0 16px;letter-spacing: 0.5px;line-height: 1.4;">
+      <span leaf="">像代码质量一样维护</span>
+    </h3>
+    <section style="width: 40px;height: 2px;background: #4A5D52;">
+      <span leaf=""><br></span>
+    </section>
+
+    <p style="margin-bottom: 26px;font-size: 15px;line-height: 1.9;text-align: justify;color: #525252;padding: 16px 0 0;">
+      <span leaf="">好 Skill 不是一次写完，它需要</span>
+      <span style="border-bottom: 1.5px solid #B5C8BC;font-weight: 500;"><span leaf="">像代码质量一样维护</span></span>
+      <span leaf="">。一个可靠的生命周期是：</span>
+    </p>
+
+    <section style="margin: 0 0 32px;border-top: 1px solid #E8E8E8;">
+      <section style="display: flex;align-items: baseline;padding: 16px 0;border-bottom: 1px solid #E8E8E8;">
+        <p style="font-size: 11px;color: #4A5D52;font-weight: 600;letter-spacing: 1px;margin: 0;min-width: 28px;"><span leaf="">01</span></p>
+        <p style="font-size: 14px;color: #2B2B2B;margin: 0;line-height: 1.7;padding-left: 12px;"><span leaf="">先用真实任务找到它会错在哪里</span></p>
+      </section>
+      <section style="display: flex;align-items: baseline;padding: 16px 0;border-bottom: 1px solid #E8E8E8;">
+        <p style="font-size: 11px;color: #4A5D52;font-weight: 600;letter-spacing: 1px;margin: 0;min-width: 28px;"><span leaf="">02</span></p>
+        <p style="font-size: 14px;color: #2B2B2B;margin: 0;line-height: 1.7;padding-left: 12px;"><span leaf="">把失败案例追加到 </span><span style="border-bottom: 1.5px solid #B5C8BC;font-weight: 500;"><span leaf="">gotchas</span></span><span leaf="">，而不是不断加长主流程</span></p>
+      </section>
+      <section style="display: flex;align-items: baseline;padding: 16px 0;border-bottom: 1px solid #E8E8E8;">
+        <p style="font-size: 11px;color: #4A5D52;font-weight: 600;letter-spacing: 1px;margin: 0;min-width: 28px;"><span leaf="">03</span></p>
+        <p style="font-size: 14px;color: #2B2B2B;margin: 0;line-height: 1.7;padding-left: 12px;"><span leaf="">再做跨模型测试，看不同模型的差异</span></p>
+      </section>
+    </section>
+
+    <p style="margin-bottom: 26px;font-size: 15px;line-height: 1.9;text-align: justify;color: #525252;">
+      <span leaf="">其中 </span>
+      <span style="background: linear-gradient(180deg, transparent 60%, #D6E4DC 60%);font-weight: 600;color: #2B2B2B;"><span leaf="">gotchas 是整个 Skill 里最高价值的内容</span></span>
+      <span leaf="">，因为正向原则模型往往已经知道，</span>
+      <strong style="color: #2B2B2B;"><span leaf="">负面边界才是专家经验</span></strong>
+      <span leaf="">。</span>
+    </p>
+  </section>
+
+  <section style="padding: 0 16px;">
+    <section style="height: 1px;background: #E8E8E8;margin: 64px 0 0;">
+      <span leaf=""><br></span>
+    </section>
+  </section>
+
+  <section style="margin-top: 64px;margin-bottom: 32px;padding: 0 16px;">
+    <p style="font-size: 10px;color: #4A5D52;font-weight: 600;letter-spacing: 4px;margin: 0 0 10px;text-transform: uppercase;">
+      <span leaf="">∞ · POSTSCRIPT</span>
+    </p>
+    <h3 style="font-family: 'Noto Serif SC', Georgia, 'Times New Roman', serif;font-size: 22px;font-weight: 700;color: #2B2B2B;margin: 0 0 16px;letter-spacing: 0.5px;line-height: 1.4;">
+      <span leaf="">个人产品的复利飞轮</span>
+    </h3>
+    <section style="width: 40px;height: 2px;background: #4A5D52;">
+      <span leaf=""><br></span>
+    </section>
+
+    <p style="margin-bottom: 26px;font-size: 15px;line-height: 1.9;text-align: justify;color: #525252;padding: 16px 0 0;">
+      <span leaf="">过去文章和产品是分开的：先做产品，再写推广。现在 Skill、文章、案例、开源仓库会</span>
+      <span style="border-bottom: 1.5px solid #B5C8BC;font-weight: 500;"><span leaf="">互相喂养</span></span>
+      <span leaf="">。</span>
+    </p>
+    <p style="margin-bottom: 26px;font-size: 15px;line-height: 1.9;text-align: justify;font-weight: 600;color: #2B2B2B;">
+      <span leaf="">每一次真实任务，都不只是在完成任务，而是在积累下一次能调用的能力资产。这就是个人产品在 Agent 时代的复利飞轮。</span>
+    </p>
+
+    <section style="border-left: 1px solid #E8E8E8;padding: 8px 16px;margin: 0 0 28px;">
+      <p style="font-size: 13px;color: #A3A3A3;margin: 0;line-height: 1.9;text-align: justify;font-style: italic;">
+        <span leaf="">当能力可以被封装、分发和复用，你写下的每一段经验，都会在未来某个任务里替你再干一次活。</span>
+      </p>
+    </section>
+  </section>
+
+  <section style="padding: 0 16px;">
+    <section style="text-align: center;margin: 48px 0 40px;">
+      <section style="display: flex;align-items: center;justify-content: center;">
+        <span style="height: 1px;width: 48px;background: #E8E8E8;margin-right: 16px;"></span>
+        <span style="font-size: 10px;color: #A3A3A3;letter-spacing: 4px;font-weight: 400;"><span leaf="">END</span></span>
+        <span style="height: 1px;width: 48px;background: #E8E8E8;margin-left: 16px;"></span>
+      </section>
+    </section>
+  </section>
+
+  <section style="padding: 0 16px 40px;">
+    <p style="margin-bottom: 26px;font-size: 15px;line-height: 1.9;text-align: justify;color: #525252;">
+      <span leaf="">我是甲木，热衷于分享一些 AI 观察、AI 干货内容。</span>
+    </p>
+    <p style="margin-bottom: 26px;font-size: 15px;line-height: 1.9;text-align: justify;color: #525252;">
+      <span leaf="">如果你觉得今天这篇有收获，欢迎</span>
+      <strong style="color: #4A5D52;"><span leaf="">点赞、在看、转发</span></strong>
+      <span leaf="">三连，我们下篇见。</span>
+    </p>
+  </section>
+
+</section>
+
+</script>
+<script type="text/plain" id="th-moyu-ticket">
+<section style="max-width:677px;margin:0 auto;background:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#374151;line-height:1.75;letter-spacing:0.5px;">
+
+  <section style="background:#fffef8;border:2px solid #1a1a1a;box-shadow:4px 4px 0 #1a1a1a;margin-bottom:32px;">
+    <section style="background:#059669;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;">
+      <section style="color:#fffef8;font-size:11px;letter-spacing:4px;font-weight:600;"><span leaf="">AGENT ERA NOTE</span></section>
+      <section style="color:#fffef8;font-size:11px;letter-spacing:2px;"><span leaf="">★★★★★</span></section>
+    </section>
+    <section style="display:flex;">
+      <section style="flex:1;padding:24px 20px;border-right:2px dashed #A7F3D0;">
+        <section style="font-size:24px;font-weight:900;color:#1a1a1a;letter-spacing:0.5px;margin-bottom:4px;text-shadow:0.5px 0 0 #1a1a1a;"><span leaf="">Agent 放大能力差距</span></section>
+        <section style="font-size:14px;color:#666;letter-spacing:1px;margin-bottom:20px;"><span leaf="">而 Skill，是这个时代真正的能力商品</span></section>
+        <section style="border-top:1px dashed #A7F3D0;margin-bottom:16px;"><span leaf=""><br></span></section>
+        <section style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+          <section>
+            <section style="font-size:15px;color:#1a1a1a;font-weight:700;"><span leaf="">甲木</span></section>
+            <section style="font-size:12px;color:#888;"><span leaf="">AI 观察 · AI 干货分享</span></section>
+          </section>
+        </section>
+        <section style="font-size:13px;color:#555;line-height:1.8;padding:12px;background:#F0FDF4;border:1px solid #A7F3D0;">
+          <span leaf="">Agent 时代最稀缺的，是把人的经验、工作流和品味，变成可以分发、调用、迭代的</span><span style="background:linear-gradient(120deg,#A7F3D0 0%,rgba(167,243,208,0) 100%);padding:0 4px;font-weight:600;color:#111;"><span leaf="">能力商品</span></span><span leaf="">。这篇讲讲我做了几个爆款 Skill 之后，对它到底是什么的判断。</span>
+        </section>
+        <section style="display:flex;gap:8px;margin-top:16px;">
+          <section style="font-size:10px;color:#059669;border:1px solid #059669;padding:4px 10px;"><span leaf="">#Skill</span></section>
+          <section style="font-size:10px;color:#059669;border:1px solid #059669;padding:4px 10px;"><span leaf="">#Agent</span></section>
+          <section style="font-size:10px;color:#059669;border:1px solid #059669;padding:4px 10px;"><span leaf="">#能力商品</span></section>
+        </section>
+      </section>
+      <section style="width:48px;padding:14px 4px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;background:#F0FDF4;">
+        <section style="text-align:center;">
+          <section style="font-size:7px;color:#999;letter-spacing:1px;"><span leaf="">NO.</span></section>
+          <section style="font-size:18px;font-weight:900;color:#059669;"><span leaf="">001</span></section>
+        </section>
+        <section style="writing-mode:vertical-rl;font-size:9px;color:#888;letter-spacing:2px;"><span leaf="">深度观察</span></section>
+        <section style="text-align:center;">
+          <section style="font-size:7px;color:#999;letter-spacing:1px;"><span leaf="">GRADE</span></section>
+          <section style="font-size:14px;font-weight:900;color:#059669;"><span leaf="">S</span></section>
+        </section>
+      </section>
+    </section>
+    <section style="display:flex;justify-content:space-between;align-items:center;padding:0 8px;">
+      <section style="flex:1;border-top:2px dashed #A7F3D0;"><span leaf=""><br></span></section>
+      <section style="padding:0 8px;font-size:10px;color:#A7F3D0;"><span leaf="">✂</span></section>
+      <section style="flex:1;border-top:2px dashed #A7F3D0;"><span leaf=""><br></span></section>
+    </section>
+    <section style="padding:10px 20px;display:flex;justify-content:space-between;align-items:center;">
+      <section style="font-size:10px;color:#999;letter-spacing:1px;"><span leaf="">VALID FOR ONE READ</span></section>
+      <section style="font-size:10px;color:#999;letter-spacing:1px;"><span leaf="">ADMIT ONE 🎫</span></section>
+    </section>
+  </section>
+
+  <section style="margin-bottom:32px;padding:0 20px;">
+    <p style="font-size:14px;color:#555;line-height:1.9;margin-bottom:16px;text-align:justify;">
+      <span leaf="">我最近几次聊 Skills，有一个越来越明确的判断：大家都在说 Agent，但大多数人还</span><span style="border-bottom:2px solid #A7F3D0;font-weight:600;"><span leaf="">没真正理解它</span></span><span leaf="">。Agent 不是简单抹平能力差距，</span><span style="color:#059669;font-weight:700;"><span leaf="">而是在放大能力差距</span></span><span leaf="">。</span>
+    </p>
+    <p style="font-size:14px;color:#555;line-height:1.9;margin-bottom:16px;text-align:justify;">
+      <span leaf="">目标清晰、品味强的人会被 Agent 放大；目标混乱、没有判断的人，也会被</span><span style="border-bottom:2px solid #A7F3D0;font-weight:600;"><span leaf="">放大混乱</span></span><span leaf="">。而 Skill，正是弥合这道鸿沟的关键。</span>
+    </p>
+  </section>
+
+  <section style="margin-bottom:32px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:12px;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid #1a1a1a;">
+      <section style="background:#059669;color:#fff;font-size:12px;font-weight:800;padding:6px 12px;letter-spacing:2px;"><span leaf="">01</span></section>
+      <section style="font-size:18px;font-weight:800;color:#1a1a1a;letter-spacing:1px;"><span leaf="">Skill 是能力商品</span></section>
+      <section style="font-size:12px;color:#888;"><span leaf="">/ 不是提示词，也不是 App</span></section>
+    </section>
+
+    <p style="font-size:14px;color:#555;line-height:1.9;margin-bottom:16px;text-align:justify;">
+      <span leaf="">我现在对 Skill 的一句话定义是：把专家经验、工作流、品味和工具调用，</span><span style="border-bottom:2px solid #A7F3D0;font-weight:600;"><span leaf="">封装成可分发、可复用、可迭代的能力单元</span></span><span leaf="">。</span>
+    </p>
+    <p style="font-size:14px;color:#555;line-height:1.9;margin-bottom:16px;text-align:justify;">
+      <span leaf="">它不是单纯的提示词，也不是传统意义上的 App，更像 Agent 时代的</span><span style="color:#059669;font-weight:700;"><span leaf="">能力商品</span></span><span leaf="">。用户不需要理解底层的 </span><span style="background:#F3F4F6;color:#1F2937;padding:2px 6px;border-radius:4px;font-size:13px;font-weight:600;"><span leaf="">MCP</span></span><span leaf="">、</span><span style="background:#F3F4F6;color:#1F2937;padding:2px 6px;border-radius:4px;font-size:13px;font-weight:600;"><span leaf="">CLI</span></span><span leaf="">、</span><span style="background:#F3F4F6;color:#1F2937;padding:2px 6px;border-radius:4px;font-size:13px;font-weight:600;"><span leaf="">loop</span></span><span leaf="">，只需要知道：它解决什么问题，产出什么结果。</span>
+    </p>
+  </section>
+
+  <section style="margin-bottom:32px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:12px;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid #1a1a1a;">
+      <section style="background:#059669;color:#fff;font-size:12px;font-weight:800;padding:6px 12px;letter-spacing:2px;"><span leaf="">02</span></section>
+      <section style="font-size:18px;font-weight:800;color:#1a1a1a;letter-spacing:1px;"><span leaf="">核心是把人的经验外化</span></section>
+      <section style="font-size:12px;color:#888;"><span leaf="">/ 创作者要同时懂三件事</span></section>
+    </section>
+
+    <p style="font-size:14px;color:#555;line-height:1.9;margin-bottom:16px;text-align:justify;">
+      <span leaf="">真正有价值的部分，是把人的</span><span style="border-bottom:2px solid #A7F3D0;font-weight:600;"><span leaf="">审美、判断和经验</span></span><span leaf="">固化进去。这要求创作者同时懂三件事：</span>
+    </p>
+  </section>
+
+  <section style="margin-bottom:32px;padding:0 20px;">
+    <section style="background:#fffef8;border:1px solid #eee;margin-bottom:12px;">
+      <section style="display:flex;align-items:stretch;">
+        <section style="width:36px;background:#059669;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:800;"><span leaf="">1</span></section>
+        <section style="flex:1;padding:12px 16px;font-size:13px;color:#555;line-height:1.7;border-left:1px dashed #A7F3D0;">
+          <span style="font-weight:600;color:#1a1a1a;"><span leaf="">传统专业知识</span></span>
+          <span leaf="">：决定你知道什么结果算好。</span>
+        </section>
+      </section>
+    </section>
+    <section style="background:#fffef8;border:1px solid #eee;margin-bottom:12px;">
+      <section style="display:flex;align-items:stretch;">
+        <section style="width:36px;background:#059669;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:800;"><span leaf="">2</span></section>
+        <section style="flex:1;padding:12px 16px;font-size:13px;color:#555;line-height:1.7;border-left:1px dashed #A7F3D0;">
+          <span style="font-weight:600;color:#1a1a1a;"><span leaf="">AI 的上下限</span></span>
+          <span leaf="">：决定你知道什么必须工程化兜底。</span>
+        </section>
+      </section>
+    </section>
+    <section style="background:#fffef8;border:1px solid #eee;margin-bottom:12px;">
+      <section style="display:flex;align-items:stretch;">
+        <section style="width:36px;background:#059669;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:800;"><span leaf="">3</span></section>
+        <section style="flex:1;padding:12px 16px;font-size:13px;color:#555;line-height:1.7;border-left:1px dashed #A7F3D0;">
+          <span style="font-weight:600;color:#1a1a1a;"><span leaf="">产品化思维</span></span>
+          <span leaf="">：决定你知道用户场景和稳定性要求。</span>
+        </section>
+      </section>
+    </section>
+  </section>
+
+  <section style="margin-bottom:32px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:8px;margin-bottom:16px;">
+      <section style="width:4px;height:16px;background:#059669;"><span leaf=""><br></span></section>
+      <section style="font-size:15px;font-weight:700;color:#1a1a1a;"><span leaf="">一个设计类 Skill 的例子</span></section>
+    </section>
+    <p style="font-size:14px;color:#555;line-height:1.9;margin-bottom:16px;text-align:justify;">
+      <span leaf="">它没有让图像模型一把梭生成 Logo，而是先生成 </span><span style="background:linear-gradient(120deg,#A7F3D0 0%,rgba(167,243,208,0) 100%);padding:0 4px;font-weight:600;color:#111;"><span leaf="">SVG 变体</span></span><span leaf="">，再做展示图。把 Logo 本体、展示场景、交互背景</span><span style="border-bottom:2px solid #A7F3D0;font-weight:600;"><span leaf="">拆成不同层</span></span><span leaf="">，分别用最适合的技术处理。</span>
+    </p>
+  </section>
+
+  <section style="margin-bottom:32px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:12px;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid #1a1a1a;">
+      <section style="background:#059669;color:#fff;font-size:12px;font-weight:800;padding:6px 12px;letter-spacing:2px;"><span leaf="">03</span></section>
+      <section style="font-size:18px;font-weight:800;color:#1a1a1a;letter-spacing:1px;"><span leaf="">好架构：中心短，辐射厚</span></section>
+      <section style="font-size:12px;color:#888;"><span leaf="">/ 文件系统就是上下文工程</span></section>
+    </section>
+  </section>
+
+  <section style="margin-bottom:32px;padding:0 20px;">
+    <section style="background:#F0FDF4;border-left:4px solid #059669;padding:14px 16px;margin-bottom:0;">
+      <p style="font-size:14px;color:#1a1a1a;font-weight:600;line-height:1.7;margin:0;">
+        <span leaf="">复杂 Skill 不怕有复杂内容，怕的是把复杂内容一次性塞给模型。</span>
+        <span style="color:#059669;"><span leaf="">文件系统本身就是一种上下文工程。</span></span>
+      </p>
+    </section>
+  </section>
+
+  <section style="margin-bottom:32px;padding:0 20px;">
+    <p style="font-size:14px;color:#555;line-height:1.9;margin-bottom:16px;text-align:justify;">
+      <span style="background:#F3F4F6;color:#1F2937;padding:2px 6px;border-radius:4px;font-size:13px;font-weight:600;"><span leaf="">SKILL.md</span></span><span leaf=""> 只放</span><span style="border-bottom:2px solid #A7F3D0;font-weight:600;"><span leaf="">高信号流程</span></span><span leaf="">；</span><span style="background:#F3F4F6;color:#1F2937;padding:2px 6px;border-radius:4px;font-size:13px;font-weight:600;"><span leaf="">references</span></span><span leaf=""> 放重文档，按需读取；</span><span style="background:#F3F4F6;color:#1F2937;padding:2px 6px;border-radius:4px;font-size:13px;font-weight:600;"><span leaf="">scripts</span></span><span leaf=""> 放确定性逻辑。更稳的架构是 </span><span style="color:#059669;font-weight:700;"><span leaf="">Thin Harness, Fat Skills</span></span><span leaf="">。</span>
+    </p>
+  </section>
+
+  <section style="margin-bottom:32px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:12px;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid #1a1a1a;">
+      <section style="background:#059669;color:#fff;font-size:12px;font-weight:800;padding:6px 12px;letter-spacing:2px;"><span leaf="">04</span></section>
+      <section style="font-size:18px;font-weight:800;color:#1a1a1a;letter-spacing:1px;"><span leaf="">像代码质量一样维护</span></section>
+      <section style="font-size:12px;color:#888;"><span leaf="">/ 好 Skill 不是一次写完</span></section>
+    </section>
+
+    <p style="font-size:14px;color:#555;line-height:1.9;margin-bottom:16px;text-align:justify;">
+      <span leaf="">好 Skill 不是一次写完，它需要像代码质量一样维护。一个可靠的</span><span style="border-bottom:2px solid #A7F3D0;font-weight:600;"><span leaf="">生命周期</span></span><span leaf="">是：</span>
+    </p>
+  </section>
+
+  <section style="margin-bottom:32px;padding:0 20px;">
+    <section style="background:#fffef8;border:1px solid #eee;margin-bottom:12px;">
+      <section style="display:flex;align-items:stretch;">
+        <section style="width:36px;background:#059669;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:800;"><span leaf="">1</span></section>
+        <section style="flex:1;padding:12px 16px;font-size:13px;color:#555;line-height:1.7;border-left:1px dashed #A7F3D0;">
+          <span style="font-weight:600;color:#1a1a1a;"><span leaf="">找错</span></span>
+          <span leaf="">：先用真实任务找到它会错在哪里。</span>
+        </section>
+      </section>
+    </section>
+    <section style="background:#fffef8;border:1px solid #eee;margin-bottom:12px;">
+      <section style="display:flex;align-items:stretch;">
+        <section style="width:36px;background:#059669;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:800;"><span leaf="">2</span></section>
+        <section style="flex:1;padding:12px 16px;font-size:13px;color:#555;line-height:1.7;border-left:1px dashed #A7F3D0;">
+          <span style="font-weight:600;color:#1a1a1a;"><span leaf="">沉淀</span></span>
+          <span leaf="">：把失败案例追加到 </span><span style="border-bottom:2px solid #A7F3D0;font-weight:600;"><span leaf="">gotchas</span></span><span leaf="">，而不是不断加长主流程。</span>
+        </section>
+      </section>
+    </section>
+    <section style="background:#fffef8;border:1px solid #eee;margin-bottom:12px;">
+      <section style="display:flex;align-items:stretch;">
+        <section style="width:36px;background:#059669;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:800;"><span leaf="">3</span></section>
+        <section style="flex:1;padding:12px 16px;font-size:13px;color:#555;line-height:1.7;border-left:1px dashed #A7F3D0;">
+          <span style="font-weight:600;color:#1a1a1a;"><span leaf="">跨测</span></span>
+          <span leaf="">：再做跨模型测试，看不同模型的差异。</span>
+        </section>
+      </section>
+    </section>
+  </section>
+
+  <section style="margin-bottom:32px;padding:0 20px;">
+    <section style="background:#F0FDF4;border-left:4px solid #059669;padding:14px 16px;margin-bottom:0;">
+      <p style="font-size:14px;color:#1a1a1a;font-weight:600;line-height:1.7;margin:0;">
+        <span leaf="">gotchas 是整个 Skill 里最高价值的内容——</span>
+        <span style="color:#059669;"><span leaf="">正向原则模型往往已经知道，负面边界才是专家经验。</span></span>
+      </p>
+    </section>
+  </section>
+
+  <section style="margin-bottom:32px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:12px;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid #1a1a1a;">
+      <section style="background:#059669;color:#fff;font-size:12px;font-weight:800;padding:6px 12px;letter-spacing:2px;"><span leaf="">05 · 结语</span></section>
+      <section style="font-size:18px;font-weight:800;color:#1a1a1a;letter-spacing:1px;"><span leaf="">个人产品的复利飞轮</span></section>
+      <section style="font-size:12px;color:#888;"><span leaf="">/ 互相喂养的资产</span></section>
+    </section>
+
+    <p style="font-size:14px;color:#555;line-height:1.9;margin-bottom:16px;text-align:justify;">
+      <span leaf="">过去文章和产品是分开的：先做产品，再写推广。现在 Skill、文章、案例、开源仓库会</span><span style="border-bottom:2px solid #A7F3D0;font-weight:600;"><span leaf="">互相喂养</span></span><span leaf="">。</span>
+    </p>
+  </section>
+
+  <section style="margin-bottom:32px;padding:0 20px;">
+    <section style="background:#fffef8;border:2px solid #1a1a1a;box-shadow:3px 3px 0 #1a1a1a;padding:20px;margin-bottom:0;">
+      <p style="font-size:15px;color:#1a1a1a;font-weight:700;line-height:1.8;margin:0 0 12px;text-align:center;">
+        <span leaf="">每一次真实任务，都是在积累下一次能调用的能力资产。</span>
+      </p>
+      <p style="font-size:14px;color:#555;line-height:1.8;margin:0;text-align:justify;">
+        <span leaf="">这就是个人产品在 Agent 时代的复利飞轮——你不只是在完成任务，而是在为未来的自己攒下一份可复用的杠杆。</span>
+      </p>
+    </section>
+  </section>
+
+  <section style="margin-bottom:32px;padding:0 20px;">
+    <section style="display:flex;gap:8px;flex-wrap:wrap;">
+      <section style="font-size:10px;color:#059669;border:1px solid #059669;padding:4px 10px;"><span leaf="">#Skill</span></section>
+      <section style="font-size:10px;color:#059669;border:1px solid #059669;padding:4px 10px;"><span leaf="">#Agent</span></section>
+      <section style="font-size:10px;color:#059669;border:1px solid #059669;padding:4px 10px;"><span leaf="">#能力商品</span></section>
+      <section style="font-size:10px;color:#059669;border:1px solid #059669;padding:4px 10px;"><span leaf="">#复利飞轮</span></section>
+    </section>
+  </section>
+
+  <section style="margin-bottom:32px;padding:0 20px;">
+    <p style="font-size:14px;color:#555;line-height:1.9;margin-bottom:16px;text-align:justify;">
+      <span leaf="">我是甲木，热衷于分享一些 AI 观察、AI 干货内容。</span>
+    </p>
+  </section>
+
+  <section style="padding:0 0 32px;">
+    <section style="background:#fffef8;border:2px solid #1a1a1a;box-shadow:4px 4px 0 #1a1a1a;padding:24px 20px;text-align:center;">
+      <p style="font-size:13px;font-weight:700;color:#1a1a1a;margin:0 0 20px;line-height:1.6;">
+        <span leaf="">如果你觉得今天这篇有收获，欢迎点赞、在看、转发三连，我们下篇见。</span>
+      </p>
+      <section style="display:flex;justify-content:center;gap:24px;margin-bottom:16px;">
+        <section style="text-align:center;color:#555;">
+          <section style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;background:#fff;border:1px solid #1a1a1a;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+          </section>
+          <span style="font-size:10px;font-weight:600;"><span leaf="">点赞</span></span>
+        </section>
+        <section style="text-align:center;color:#555;">
+          <section style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;background:#fff;border:1px solid #1a1a1a;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"></circle><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path></svg>
+          </section>
+          <span style="font-size:10px;font-weight:600;"><span leaf="">在看</span></span>
+        </section>
+        <section style="text-align:center;color:#059669;">
+          <section style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;background:#F0FDF4;border:2px solid #059669;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </section>
+          <span style="font-size:10px;font-weight:600;"><span leaf="">星标</span></span>
+        </section>
+      </section>
+      <section style="border-top:1px dashed #ccc;padding-top:12px;">
+        <p style="font-size:10px;color:#999;letter-spacing:2px;margin:0;">
+          <span leaf="">THANKS FOR READING ✂</span>
+        </p>
+      </section>
+    </section>
+  </section>
+
+  <p style="text-align:center;color:#D1D5DB;font-size:14px;margin:24px 0 0 0;">
+    <span leaf="">/</span>
+  </p>
+
+</section>
+
+<p style="display:none;">
+  <mp-style-type data-value="3"></mp-style-type>
+</p>
+
+</script>
+<script type="text/plain" id="th-olive-journal">
+<section style="max-width:677px;margin:0 auto;padding:8px;box-sizing:border-box;background:#fdfdf8;color:#4d4f46;font-family:'IBM Plex Sans',-apple-system,system-ui,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;line-height:1.75;">
+
+  <section style="background:#fdfdf8;border:1px solid #bfc1b7;border-radius:6px;overflow:hidden;font-family:'IBM Plex Sans',-apple-system,system-ui,sans-serif;">
+    <section style="padding:28px 24px 22px;">
+      <section style="display:flex;align-items:center;gap:8px;margin-bottom:22px;">
+        <span style="width:8px;height:8px;background:#1e1f23;border-radius:50%;display:inline-block;overflow:hidden;vertical-align:middle;font-size:0;line-height:0;"><span leaf="">&nbsp;</span></span>
+        <span style="font-size:10px;font-weight:700;letter-spacing:3px;color:#65675e;"><span leaf="">橄榄手记 · 编辑部观察</span></span>
+        <span style="flex:1;height:1px;background:#bfc1b7;display:inline-block;overflow:hidden;vertical-align:middle;font-size:0;line-height:0;"><span leaf="">&nbsp;</span></span>
+        <span style="font-size:10px;color:#9ea096;font-weight:500;font-variant-numeric:tabular-nums;"><span leaf="">ISSUE 07</span></span>
+      </section>
+      <section style="display:flex;align-items:stretch;gap:18px;">
+        <section style="flex:1;min-width:0;">
+          <p style="font-size:24px;font-weight:800;color:#23251d;margin:0 0 10px;line-height:1.15;letter-spacing:-0.75px;">
+            <span leaf="">Agent 在放大能力差距</span><span style="color:#4d4f46;"><span leaf="">&nbsp;·&nbsp;</span></span><span style="border-bottom:3px solid #e5e7e0;"><span leaf="">Skill 是能力商品</span></span>
+          </p>
+          <section style="display:flex;align-items:center;gap:4px;margin-bottom:12px;">
+            <span style="width:22px;height:3px;background:#1e1f23;border-radius:2px;display:inline-block;overflow:hidden;vertical-align:middle;font-size:0;line-height:0;"><span leaf="">&nbsp;</span></span>
+            <span style="width:8px;height:3px;background:#bfc1b7;border-radius:2px;display:inline-block;overflow:hidden;vertical-align:middle;font-size:0;line-height:0;"><span leaf="">&nbsp;</span></span>
+          </section>
+          <p style="font-size:13px;color:#65675e;margin:0;line-height:1.7;"><span leaf="">大多数人还没真正理解 Agent——它不抹平差距，而是放大差距。而 Skill，正是弥合这道鸿沟的那件商品。</span></p>
+        </section>
+        <section style="flex-shrink:0;width:112px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#eeefe9;border:1px dashed #bfc1b7;border-radius:6px;padding:8px;">
+          <svg width="72" height="72" viewBox="0 0 64 64" aria-hidden="true" style="display:block;">
+            <ellipse cx="32" cy="36" rx="22" ry="18" fill="none" stroke="#4d4f46" stroke-width="2"></ellipse>
+            <circle cx="26" cy="30" r="3" fill="#4d4f46"></circle>
+            <circle cx="38" cy="30" r="3" fill="#4d4f46"></circle>
+            <path d="M28 40 Q32 44 36 40" fill="none" stroke="#4d4f46" stroke-width="1.5"></path>
+            <path d="M12 34 L8 28 M52 34 L56 28" stroke="#bfc1b7" stroke-width="2" stroke-linecap="round"></path>
+          </svg>
+          <span style="font-size:8px;font-weight:700;color:#9ea096;letter-spacing:1px;margin-top:4px;"><span leaf="">DOODLE</span></span>
+        </section>
+      </section>
+    </section>
+    <section style="background:#1e1f23;padding:11px 24px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;">
+      <p style="font-size:12px;color:rgba(255,255,255,0.92);margin:0;font-weight:600;"><span leaf="">做了几个爆款 Skill 之后，我把这些判断记了下来</span></p>
+      <section style="display:flex;gap:6px;flex-wrap:wrap;">
+        <span style="background:#e5e7e0;color:#23251d;padding:3px 8px;border-radius:4px;font-size:8px;font-weight:700;border:1px solid #bfc1b7;"><span leaf="">SKILL</span></span>
+        <span style="background:#e5e7e0;color:#23251d;padding:3px 8px;border-radius:4px;font-size:8px;font-weight:700;border:1px solid #bfc1b7;"><span leaf="">AGENT</span></span>
+      </section>
+    </section>
+  </section>
+
+  <section style="margin-top:24px;">
+    <section style="background:#fdfdf8;border:1px solid #bfc1b7;border-radius:6px;overflow:hidden;font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+      <section style="padding:10px 16px;background:#1e1f23;display:flex;align-items:center;justify-content:space-between;gap:10px;">
+        <p style="margin:0;font-size:10px;font-weight:800;letter-spacing:2px;color:#ffffff;"><span leaf="">EDITOR&rsquo;S NOTE</span></p>
+        <span style="font-size:10px;color:rgba(255,255,255,0.65);"><span leaf="">开篇</span></span>
+      </section>
+      <section style="padding:16px 18px 18px;background:#eeefe9;">
+        <p style="margin:0;font-size:14px;line-height:1.9;color:#4d4f46;text-align:justify;"><span leaf="">Agent 时代最稀缺的，是把人的经验、工作流和品味，变成可以分发、调用、迭代的</span><span style="background:#eeefe9;padding:1px 5px;border-radius:4px;font-weight:600;color:#23251d;border:1px solid #bfc1b7;"><span leaf="">能力商品</span></span><span leaf="">。目标清晰、品味强的人会被 Agent 放大；目标混乱、没有判断的人，也会被放大混乱。</span></p>
+      </section>
+    </section>
+  </section>
+
+  <section style="margin-top:24px;">
+    <section style="font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+      <section style="display:flex;align-items:center;gap:14px;">
+        <section style="text-align:center;flex-shrink:0;">
+          <p style="margin:0;font-size:24px;font-weight:800;color:#23251d;line-height:1;letter-spacing:-2px;"><span leaf="">01</span></p>
+          <p style="margin:0;font-size:8px;font-weight:700;color:#9ea096;letter-spacing:2px;"><span leaf="">PART</span></p>
+        </section>
+        <span style="width:1px;height:36px;background:#bfc1b7;flex-shrink:0;display:inline-block;overflow:hidden;vertical-align:middle;font-size:0;line-height:0;"><span leaf="">&nbsp;</span></span>
+        <section>
+          <p style="margin:0 0 1px;font-size:17px;font-weight:800;color:#23251d;letter-spacing:0.2px;"><span leaf="">Skill 是能力商品</span></p>
+          <p style="margin:0;font-size:11px;font-weight:600;color:#65675e;letter-spacing:1.2px;"><span leaf="">不是提示词，也不是 App</span></p>
+        </section>
+      </section>
+    </section>
+  </section>
+
+  <section style="margin-top:24px;">
+    <section style="font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+      <p style="margin:0;font-size:14px;line-height:1.9;text-align:justify;color:#4d4f46;">
+        <span leaf="">我现在对 Skill 的一句话定义是：把专家经验、工作流、品味和工具调用，封装成</span><span style="border-bottom:2px solid #ed7b2f;font-weight:600;color:#23251d;"><span leaf="">可分发、可复用、可迭代的能力单元</span></span><span leaf="">。它不是单纯的提示词，也不是传统意义上的 App，更像 Agent 时代的</span><strong style="color:#23251d;"><span leaf="">能力商品</span></strong><span leaf="">。</span>
+      </p>
+    </section>
+  </section>
+
+  <section style="margin-top:24px;">
+    <section style="font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+      <p style="margin:0;font-size:14px;line-height:1.9;text-align:justify;color:#4d4f46;">
+        <span leaf="">用户不需要理解底层的 </span><span style="background:#eeefe9;color:#23251d;padding:2px 6px;border-radius:4px;font-family:ui-monospace,Menlo,Monaco,Consolas,monospace;font-size:13px;border:1px solid #b6b7af;"><span leaf="">MCP</span></span><span leaf="">、</span><span style="background:#eeefe9;color:#23251d;padding:2px 6px;border-radius:4px;font-family:ui-monospace,Menlo,Monaco,Consolas,monospace;font-size:13px;border:1px solid #b6b7af;"><span leaf="">CLI</span></span><span leaf="">、</span><span style="background:#eeefe9;color:#23251d;padding:2px 6px;border-radius:4px;font-family:ui-monospace,Menlo,Monaco,Consolas,monospace;font-size:13px;border:1px solid #b6b7af;"><span leaf="">loop</span></span><span leaf="">，只需要知道：它</span><span style="border-bottom:2px solid #ed7b2f;font-weight:600;color:#23251d;"><span leaf="">解决什么问题，产出什么结果</span></span><span leaf="">。</span>
+      </p>
+    </section>
+  </section>
+
+  <section style="margin-top:24px;">
+    <section style="font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+      <section style="display:flex;align-items:center;gap:14px;">
+        <section style="text-align:center;flex-shrink:0;">
+          <p style="margin:0;font-size:24px;font-weight:800;color:#23251d;line-height:1;letter-spacing:-2px;"><span leaf="">02</span></p>
+          <p style="margin:0;font-size:8px;font-weight:700;color:#9ea096;letter-spacing:2px;"><span leaf="">PART</span></p>
+        </section>
+        <span style="width:1px;height:36px;background:#bfc1b7;flex-shrink:0;display:inline-block;overflow:hidden;vertical-align:middle;font-size:0;line-height:0;"><span leaf="">&nbsp;</span></span>
+        <section>
+          <p style="margin:0 0 1px;font-size:17px;font-weight:800;color:#23251d;letter-spacing:0.2px;"><span leaf="">核心是把人的经验外化</span></p>
+          <p style="margin:0;font-size:11px;font-weight:600;color:#65675e;letter-spacing:1.2px;"><span leaf="">审美、判断与经验的固化</span></p>
+        </section>
+      </section>
+    </section>
+  </section>
+
+  <section style="margin-top:24px;">
+    <section style="font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+      <p style="margin:0;font-size:14px;line-height:1.9;text-align:justify;color:#4d4f46;">
+        <span leaf="">真正有价值的部分，是把人的</span><span style="border-bottom:2px solid #ed7b2f;font-weight:600;color:#23251d;"><span leaf="">审美、判断和经验</span></span><span leaf="">固化进去。这要求创作者同时懂三件事：</span>
+      </p>
+    </section>
+  </section>
+
+  <section style="margin-top:24px;">
+    <section style="font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+      <section style="margin-bottom:14px;">
+        <p style="margin:0 0 6px;">
+          <span style="display:inline-block;font-size:13px;font-weight:700;color:#23251d;background:#e5e7e0;padding:3px 10px;border-radius:999px;border:1px solid #bfc1b7;">
+            <span style="display:inline-block;width:6px;height:6px;background:#ed7b2f;border-radius:50%;margin-right:5px;vertical-align:middle;overflow:hidden;font-size:0;line-height:0;"><span leaf="">&nbsp;</span></span><span leaf="">&nbsp;传统专业知识&nbsp;</span>
+          </span>
+        </p>
+        <p style="font-size:13px;color:#4d4f46;margin:0;line-height:1.7;text-align:justify;"><span leaf="">决定你知道什么结果算好。</span></p>
+      </section>
+      <section style="margin-bottom:14px;">
+        <p style="margin:0 0 6px;">
+          <span style="display:inline-block;font-size:13px;font-weight:700;color:#23251d;background:#e5e7e0;padding:3px 10px;border-radius:999px;border:1px solid #bfc1b7;">
+            <span style="display:inline-block;width:6px;height:6px;background:#4d4f46;border-radius:50%;margin-right:5px;vertical-align:middle;overflow:hidden;font-size:0;line-height:0;"><span leaf="">&nbsp;</span></span><span leaf="">&nbsp;AI 的上下限&nbsp;</span>
+          </span>
+        </p>
+        <p style="font-size:13px;color:#4d4f46;margin:0;line-height:1.7;text-align:justify;"><span leaf="">决定你知道什么必须工程化兜底。</span></p>
+      </section>
+      <section style="margin-bottom:14px;">
+        <p style="margin:0 0 6px;">
+          <span style="display:inline-block;font-size:13px;font-weight:700;color:#23251d;background:#e5e7e0;padding:3px 10px;border-radius:999px;border:1px solid #bfc1b7;">
+            <span style="display:inline-block;width:6px;height:6px;background:#ed7b2f;border-radius:50%;margin-right:5px;vertical-align:middle;overflow:hidden;font-size:0;line-height:0;"><span leaf="">&nbsp;</span></span><span leaf="">&nbsp;产品化思维&nbsp;</span>
+          </span>
+        </p>
+        <p style="font-size:13px;color:#4d4f46;margin:0;line-height:1.7;text-align:justify;"><span leaf="">决定你知道用户场景和稳定性要求。</span></p>
+      </section>
+    </section>
+  </section>
+
+  <section style="margin-top:24px;">
+    <section style="font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+      <h3 style="font-size:18px;font-weight:700;color:#23251d;margin:0;padding:0 2px;display:block;width:fit-content;box-shadow:inset 0 -0.5em 0 rgba(245,78,0,0.18);"><span leaf="">一个设计类 Skill 的例子</span></h3>
+    </section>
+  </section>
+
+  <section style="margin-top:24px;">
+    <section style="font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+      <p style="margin:0;font-size:14px;line-height:1.9;text-align:justify;color:#4d4f46;">
+        <span leaf="">它没有让图像模型一把梭生成 Logo，而是先生成 </span><span style="background:#eeefe9;padding:1px 5px;border-radius:4px;font-weight:600;color:#23251d;border:1px solid #bfc1b7;"><span leaf="">SVG 变体</span></span><span leaf="">，再做展示图。把 Logo 本体、展示场景、交互背景拆成不同层，</span><span style="border-bottom:2px solid #ed7b2f;font-weight:600;color:#23251d;"><span leaf="">分别用最适合的技术处理</span></span><span leaf="">。</span>
+      </p>
+    </section>
+  </section>
+
+  <section style="margin-top:24px;">
+    <section style="font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+      <section style="display:flex;align-items:center;gap:14px;">
+        <section style="text-align:center;flex-shrink:0;">
+          <p style="margin:0;font-size:24px;font-weight:800;color:#23251d;line-height:1;letter-spacing:-2px;"><span leaf="">03</span></p>
+          <p style="margin:0;font-size:8px;font-weight:700;color:#9ea096;letter-spacing:2px;"><span leaf="">PART</span></p>
+        </section>
+        <span style="width:1px;height:36px;background:#bfc1b7;flex-shrink:0;display:inline-block;overflow:hidden;vertical-align:middle;font-size:0;line-height:0;"><span leaf="">&nbsp;</span></span>
+        <section>
+          <p style="margin:0 0 1px;font-size:17px;font-weight:800;color:#23251d;letter-spacing:0.2px;"><span leaf="">好架构：中心短，辐射厚</span></p>
+          <p style="margin:0;font-size:11px;font-weight:600;color:#65675e;letter-spacing:1.2px;"><span leaf="">Thin Harness, Fat Skills</span></p>
+        </section>
+      </section>
+    </section>
+  </section>
+
+  <section style="margin-top:24px;">
+    <section style="font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+      <section style="background:#fdfdf8;border-radius:6px;padding:16px 18px;border:1px solid #bfc1b7;">
+        <p style="font-size:14px;color:#4d4f46;margin:0;line-height:1.8;text-align:justify;">
+          <strong style="color:#23251d;border-bottom:3px solid #ed7b2f;"><span leaf="">复杂 Skill 不怕有复杂内容，怕的是把复杂内容一次性塞给模型。</span></strong><span leaf="">&nbsp;文件系统本身就是一种上下文工程。</span>
+        </p>
+      </section>
+    </section>
+  </section>
+
+  <section style="margin-top:24px;">
+    <section style="font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+      <p style="margin:0;font-size:14px;line-height:1.9;text-align:justify;color:#4d4f46;">
+        <span style="background:#eeefe9;color:#23251d;padding:2px 6px;border-radius:4px;font-family:ui-monospace,Menlo,Monaco,Consolas,monospace;font-size:13px;border:1px solid #b6b7af;"><span leaf="">SKILL.md</span></span><span leaf="">&nbsp;只放高信号流程；</span><span style="background:#eeefe9;color:#23251d;padding:2px 6px;border-radius:4px;font-family:ui-monospace,Menlo,Monaco,Consolas,monospace;font-size:13px;border:1px solid #b6b7af;"><span leaf="">references</span></span><span leaf="">&nbsp;放重文档，</span><span style="border-bottom:2px solid #ed7b2f;font-weight:600;color:#23251d;"><span leaf="">按需读取</span></span><span leaf="">；</span><span style="background:#eeefe9;color:#23251d;padding:2px 6px;border-radius:4px;font-family:ui-monospace,Menlo,Monaco,Consolas,monospace;font-size:13px;border:1px solid #b6b7af;"><span leaf="">scripts</span></span><span leaf="">&nbsp;放确定性逻辑。更稳的架构是</span><strong style="color:#23251d;"><span leaf="">&nbsp;Thin Harness, Fat Skills</span></strong><span leaf="">。</span>
+      </p>
+    </section>
+  </section>
+
+  <section style="margin-top:24px;">
+    <section style="font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+      <section style="display:flex;align-items:center;gap:14px;">
+        <section style="text-align:center;flex-shrink:0;">
+          <p style="margin:0;font-size:24px;font-weight:800;color:#23251d;line-height:1;letter-spacing:-2px;"><span leaf="">04</span></p>
+          <p style="margin:0;font-size:8px;font-weight:700;color:#9ea096;letter-spacing:2px;"><span leaf="">PART</span></p>
+        </section>
+        <span style="width:1px;height:36px;background:#bfc1b7;flex-shrink:0;display:inline-block;overflow:hidden;vertical-align:middle;font-size:0;line-height:0;"><span leaf="">&nbsp;</span></span>
+        <section>
+          <p style="margin:0 0 1px;font-size:17px;font-weight:800;color:#23251d;letter-spacing:0.2px;"><span leaf="">像代码质量一样维护</span></p>
+          <p style="margin:0;font-size:11px;font-weight:600;color:#65675e;letter-spacing:1.2px;"><span leaf="">gotchas 才是专家经验</span></p>
+        </section>
+      </section>
+    </section>
+  </section>
+
+  <section style="margin-top:24px;">
+    <section style="font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+      <p style="margin:0;font-size:14px;line-height:1.9;text-align:justify;color:#4d4f46;">
+        <span leaf="">好 Skill 不是一次写完，它需要</span><span style="border-bottom:2px solid #ed7b2f;font-weight:600;color:#23251d;"><span leaf="">像代码质量一样维护</span></span><span leaf="">。一个可靠的生命周期是：</span>
+      </p>
+    </section>
+  </section>
+
+  <section style="margin-top:24px;">
+    <section style="font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+      <ul style="margin:0;padding-left:22px;line-height:1.8;list-style-position:outside;">
+        <li style="margin-bottom:8px;font-size:15px;color:#4d4f46;list-style-type:disc;">
+          <section><span leaf="">先用</span><span style="border-bottom:2px solid #ed7b2f;font-weight:600;color:#23251d;"><span leaf="">真实任务</span></span><span leaf="">找到它会错在哪里。</span></section>
+        </li>
+        <li style="margin-bottom:8px;font-size:15px;color:#4d4f46;list-style-type:disc;">
+          <section><span leaf="">把失败案例追加到 </span><span style="border-bottom:2px solid #ed7b2f;font-weight:600;color:#23251d;"><span leaf="">gotchas</span></span><span leaf="">，而不是不断加长主流程。</span></section>
+        </li>
+        <li style="margin-bottom:8px;font-size:15px;color:#4d4f46;list-style-type:disc;">
+          <section><span leaf="">再做</span><span style="border-bottom:2px solid #ed7b2f;font-weight:600;color:#23251d;"><span leaf="">跨模型测试</span></span><span leaf="">，看不同模型的差异。</span></section>
+        </li>
+      </ul>
+    </section>
+  </section>
+
+  <section style="margin-top:24px;">
+    <section style="font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+      <p style="margin:0;font-size:14px;line-height:1.9;text-align:justify;color:#4d4f46;">
+        <span leaf="">其中 </span><span style="color:#9ea096;text-decoration:line-through;"><span leaf="">gotchas 是整个 Skill 里最高价值的内容</span></span><span leaf="">，因为正向原则模型往往已经知道，</span><strong style="color:#23251d;"><span leaf="">负面边界才是专家经验</span></strong><span leaf="">。</span>
+      </p>
+    </section>
+  </section>
+
+  <section style="margin-top:24px;">
+    <section style="font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+      <section style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+        <section style="text-align:center;flex-shrink:0;">
+          <p style="margin:0;font-size:24px;font-weight:800;color:#23251d;line-height:1;letter-spacing:-2px;"><span leaf="">///</span></p>
+          <p style="margin:0;font-size:8px;font-weight:700;color:#9ea096;letter-spacing:2px;"><span leaf="">END</span></p>
+        </section>
+        <span style="width:1px;height:36px;background:#bfc1b7;flex-shrink:0;display:inline-block;overflow:hidden;vertical-align:middle;font-size:0;line-height:0;"><span leaf="">&nbsp;</span></span>
+        <section>
+          <p style="margin:0 0 1px;font-size:17px;font-weight:800;color:#23251d;letter-spacing:0.2px;"><span leaf="">个人产品的复利飞轮</span></p>
+          <p style="margin:0;font-size:11px;font-weight:600;color:#65675e;letter-spacing:1.2px;"><span leaf="">文章、案例、仓库互相喂养</span></p>
+        </section>
+      </section>
+      <p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;color:#4d4f46;"><span leaf="">过去文章和产品是分开的：先做产品，再写推广。</span><span style="margin-left:6px;font-weight:700;color:#23251d;"><span leaf="">现在 Skill、文章、案例、开源仓库会互相喂养</span></span><span style="margin-left:6px;background:#e5e7e0;padding:1px 5px;border-radius:4px;font-weight:600;color:#23251d;border:1px solid #bfc1b7;"><span leaf="">从割裂到共生</span></span></p>
+      <p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;color:#4d4f46;"><span leaf="">每一次真实任务，都不只是在完成任务，而是在</span><span style="border-bottom:2px solid #ed7b2f;font-weight:600;color:#23251d;"><span leaf="">积累下一次能调用的能力资产</span></span><span leaf="">。</span></p>
+      <section style="background:#eeefe9;border-radius:6px;padding:16px 18px;border:1px solid #bfc1b7;text-align:center;">
+        <p style="font-size:15px;color:#23251d;margin:0;line-height:1.6;"><strong style="border-bottom:3px solid #ed7b2f;"><span leaf="">这就是个人产品在 Agent 时代的复利飞轮</span></strong></p>
+      </section>
+    </section>
+  </section>
+
+  <section style="margin-top:24px;">
+    <section style="background:#1e1f23;border:1px solid #23251d;padding:8px;box-sizing:border-box;border-radius:6px;font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+      <section style="border:1px solid rgba(255,255,255,0.16);border-radius:4px;padding:20px 22px;">
+        <p style="margin:0 0 8px;font-size:10px;line-height:1.6;color:#a3a3a3;letter-spacing:4px;font-weight:800;"><span leaf="">CLOSING</span></p>
+        <p style="margin:0;font-size:16px;line-height:1.9;color:#fafafa;font-weight:700;"><span leaf="">Agent 不抹平能力差距，而是放大它——真正弥合鸿沟的，是把经验封装成可分发、可复用、可迭代的 Skill。</span></p>
+      </section>
+    </section>
+  </section>
+
+  <section style="margin-top:24px;">
+    <section style="font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+      <p style="margin:0;font-size:14px;line-height:1.9;text-align:justify;color:#4d4f46;">
+        <span leaf="">我是甲木，热衷于分享一些 AI 观察、AI 干货内容。</span>
+      </p>
+    </section>
+  </section>
+
+  <section style="margin-top:24px;">
+    <section style="font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+      <span style="display:inline-flex;align-items:center;gap:10px;padding:8px 12px;background:#eeefe9;border:1px solid #bfc1b7;border-radius:999px;">
+        <span style="width:22px;height:22px;border-radius:50%;background:#1e1f23;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;"><span leaf="">甲</span></span>
+        <span style="font-size:12px;color:#23251d;font-weight:700;"><span leaf="">甲木 · AI 观察与干货</span></span>
+      </span>
+    </section>
+  </section>
+
+  <section style="margin-top:24px;">
+    <section style="background:#fdfdf8;border:1px solid #bfc1b7;border-radius:6px;padding:22px 16px;text-align:center;font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+      <p style="font-size:13px;font-weight:700;color:#23251d;line-height:1.6;margin:0 0 14px;"><span leaf="">如果你觉得今天这篇有收获，欢迎点赞、在看、转发三连，我们下篇见。</span></p>
+      <section style="display:flex;justify-content:center;gap:18px;margin-bottom:14px;flex-wrap:wrap;">
+        <section style="text-align:center;color:#4d4f46;">
+          <section style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;background:#eeefe9;border-radius:6px;border:1px solid #bfc1b7;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+          </section>
+          <span style="font-size:11px;font-weight:600;"><span leaf="">赞</span></span>
+        </section>
+        <section style="text-align:center;color:#4d4f46;">
+          <section style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;background:#eeefe9;border-radius:6px;border:1px solid #bfc1b7;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path></svg>
+          </section>
+          <span style="font-size:11px;font-weight:600;"><span leaf="">在看</span></span>
+        </section>
+        <section style="text-align:center;color:#23251d;">
+          <section style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;background:#d4c9b8;border-radius:6px;border:1px solid #b17816;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#23251d" stroke-width="1.8" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </section>
+          <span style="font-size:11px;font-weight:700;"><span leaf="">收藏</span></span>
+        </section>
+      </section>
+      <p style="line-height:1.6;font-size:10px;color:#9ea096;letter-spacing:2px;margin:0;font-weight:500;"><span leaf="">THANKS FOR READING</span></p>
+    </section>
+  </section>
+
+</section>
+
+<p style="display:none;">
+  <mp-style-type data-value="3"></mp-style-type>
+</p>
+
+</script>
+<script>
+  var THEMES=[[["摸鱼绿（默认）", "#059669", "moyu-green"], ["红白色系", "#DC2626", "red-white"], ["石墨极简风", "#52525B", "graphite-minimal"], ["留白禅意风", "#4A5D52", "zen-whitespace"], ["摸鱼票据风", "#059669", "moyu-ticket"], ["橄榄手记", "#1e1f23", "olive-journal"]]];
+  var tabs=document.getElementById('tabs'), panes=document.getElementById('panes');
+  THEMES.forEach(function(t,i){
+    var name=t[0],color=t[1],slug=t[2];
+    var src=document.getElementById('th-'+slug).textContent;
+    var tab=document.createElement('div');
+    tab.className='tab'+(i===0?' active':'');
+    tab.innerHTML='<span class="dot" style="background:'+color+'"></span>'+name;
+    tab.onclick=function(){show(i);};
+    tabs.appendChild(tab);
+    var pane=document.createElement('div');
+    pane.className='pane'+(i===0?' active':'');
+    var f=document.createElement('iframe');
+    f.srcdoc=src;
+    pane.appendChild(f);
+    panes.appendChild(pane);
+  });
+  function show(i){
+    var ts=tabs.children, ps=panes.children;
+    for(var k=0;k<ts.length;k++){ts[k].classList.toggle('active',k===i);ps[k].classList.toggle('active',k===i);}
+  }
+</script>
+</body>
+</html>
